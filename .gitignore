@@ -1,0 +1,7 @@
+// all deny
+*
+*/
+
+// white list
+!.gitignore
+!CyberDefenders/*
