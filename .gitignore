@@ -7,4 +7,4 @@
 
 # white list
 !.gitignore
-!CyberDefenders/*
+!CyberDefenders/*/*
