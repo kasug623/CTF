@@ -18,4 +18,16 @@ But sometimes volatility 3 can do what volatility 2 cannot do.
 
 
 ## #1
+```
+vol2 -f Bob.vmem kdbgscan > kdbgscan.txt
+vol2 -f Bob.vmem imageinfo > imageinfo.txt
+vol2 -f Bob.vmem --profile=WinXPSP2x86 sockets > sockets.txt
+vol2 -f Bob.vmem --profile=WinXPSP2x86 connections > connections.txt
+```
 
+## #2
+```
+vol2 -f Bob.vmem --profile=WinXPSP2x86 hivelist > hivelist.txt
+vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -o 0xe1035b60
+vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -K "CurrentControlSet"
+```
