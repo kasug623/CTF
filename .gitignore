@@ -2,7 +2,9 @@
 *
 */
 
+# white list for directory
+!*/
+
 # white list
 !.gitignore
 !CyberDefenders/*
-
