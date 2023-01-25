@@ -30,4 +30,28 @@ vol2 -f Bob.vmem --profile=WinXPSP2x86 connections > connections.txt
 vol2 -f Bob.vmem --profile=WinXPSP2x86 hivelist > hivelist.txt
 vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -o 0xe1035b60
 vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -K "CurrentControlSet"
+vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -K "ControlSet001"
+vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -K "ControlSet001\Control\Session Manager\Environment"
 ```
+[https://stackoverflow.com/questions/573817/where-are-environment-variables-stored-in-the-windows-registry](https://stackoverflow.com/questions/573817/where-are-environment-variables-stored-in-the-windows-registry)
+
+## #3
+```
+vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -o 0xe1526748 -K "Policies\Microsoft\Windows"
+vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -o 0xe1526748 -K "Microsoft\Windows NT\CurrentVersion\Winlogon"
+vol2 -f Bob.vmem --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe151ea08 > hashdump_sam.txt
+```
+### prontkey
+-o is quick.
+
+### how to get password from memory 
+1. check winlogon.
+1. check domain, dump "SAM" and crack it.    
+
+
+### cf.
+- john
+[https://qiita.com/y-araki-qiita/items/cda417e49108eee1fb7b](https://qiita.com/y-araki-qiita/items/cda417e49108eee1fb7b)
+
+- registry  
+[https://www.mbsd.jp/blog/20190514.html](https://www.mbsd.jp/blog/20190514.html)
