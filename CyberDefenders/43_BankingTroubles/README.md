@@ -40,6 +40,8 @@ vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -K "ControlSet001\Control\Sessio
 vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -o 0xe1526748 -K "Policies\Microsoft\Windows"
 vol2 -f Bob.vmem --profile=WinXPSP2x86 printkey -o 0xe1526748 -K "Microsoft\Windows NT\CurrentVersion\Winlogon"
 vol2 -f Bob.vmem --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe151ea08 > hashdump_sam.txt
+john hashdump_sam.txt
+john hashdump_sam.txt --show
 ```
 ### prontkey
 -o is quick.
@@ -50,8 +52,25 @@ vol2 -f Bob.vmem --profile=WinXPSP2x86 hashdump -y 0xe1035b60 -s 0xe151ea08 > ha
 
 
 ### cf.
-- john
-[https://qiita.com/y-araki-qiita/items/cda417e49108eee1fb7b](https://qiita.com/y-araki-qiita/items/cda417e49108eee1fb7b)
+- john  
+[https://qiita.com/y-araki-qiita/items/cda417e49108eee1fb7b](https://qiita.com/y-araki-qiita/items/cda417e49108eee1fb7b)  
+[https://nekotosec.com/try-using-john-the-ripper/](https://nekotosec.com/try-using-john-the-ripper/)
 
 - registry  
 [https://www.mbsd.jp/blog/20190514.html](https://www.mbsd.jp/blog/20190514.html)
+
+## #4
+```
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 pslist > pslist.txt
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 psscan > psscan.txt
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 pstree > pstree.txt
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 psxview > psxview.txt
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 malfind -p 1752 > malfind_1752.txt
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 connections > connections.txt
+```
+
+
+## #7
+```
+$ strings Bob.vmem | grep "XXX.XXX.XXX.XXX(suspicious ip)" | grep .php | grep http
+```
