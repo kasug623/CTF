@@ -105,3 +105,8 @@ $ cat handles.txt | wc -l
 $ cat handles.txt | grep PDF
 ```
 `handles` takes minutes.
+
+## #10
+```
+$ vol2 -f Bob.vmem --profile=WinXPSP2x86 dumpfiles -n -p 1752 -r PDF --dump-dir=./output/output_dumpfiles/
+```
