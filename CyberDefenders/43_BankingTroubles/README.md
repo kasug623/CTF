@@ -20,6 +20,13 @@ But sometimes volatility 3 can do what volatility 2 cannot do.
 - understand `dlllist` and `ldrmodules`
 https://snoozy.hatenablog.com/entry/2020/03/31/220018  
 https://snoozy.hatenablog.com/entry/2019/12/19/121813
+- how to use qpdf
+- how to use pdf-parser.py
+hot to extract, python2
+- how to use peepdf.py
+how to extract, python2
+- how to analyze js
+especially run
 
 ## #1
 ```
@@ -109,4 +116,19 @@ $ cat handles.txt | grep PDF
 ## #10
 ```
 $ vol2 -f Bob.vmem --profile=WinXPSP2x86 dumpfiles -n -p 1752 -r PDF --dump-dir=./output/output_dumpfiles/
+$ pdf-parser.py --stats 00601560.pdf
+$ pdf-parser.py --search javascript 00601560.pdf
+$ pdf-parser.py --object=1054 00601560.pdf
+$ pdf-parser.py --object=1054 --filter 00601560.pdf
+$ pdf-parser.py --object=1054 --filter --dump=./00601560.pdf_js_1054 00601560.pdf
+$ cat 00601560.pdf_js_1054 | clip
+(beautify js at https://lelinhtinh.github.io/de4js/)
+$ cat 00601560.pdf_js_1054 | grep --color eval
+```
+
+## #11
+```
+$ js-file.exe 00601560.pdf_js_1054
+(be careful to run malicious js)
+(then you can get the log)
 ```
