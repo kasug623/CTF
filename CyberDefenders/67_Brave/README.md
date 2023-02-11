@@ -1,18 +1,8 @@
 # Writeups
 ## lesson
 - The way to dump is changed from volatility3 ver.1 to its ver.2.
-- There is a difference of a result between "netscan" and "netstat" at volatility.
-```
-The difference in results between using the netscan plugin and the netstat plugin in the Volatility framework can be attributed to the different sources of information they use and the way they process that information.
-
-The netscan plugin uses memory dumps to scan for and extract information about active network connections. It searches for various data structures in memory, such as TCP and UDP tables, to gather information about open connections and the state of those connections.
-
-On the other hand, the netstat plugin uses the output of the netstat command, which is a command-line utility that displays active network connections and network statistics. The netstat plugin runs the netstat command within the context of a profile and collects the output of the command, which is then processed and analyzed by the plugin.
-
-Due to the differences in the sources of information used by the netscan and netstat plugins, it is possible for the results obtained by these plugins to be different. For example, the netscan plugin may reveal network connections that are not shown by the netstat plugin, or vice versa. Additionally, the way that the plugins process the information they gather can also lead to differences in the results.
-
-In general, the choice of plugin to use in a given scenario depends on the specific requirements of the analysis, the state of the system being analyzed, and the type of information that is required. It is important to understand the strengths and limitations of each plugin and choose the one that is best suited to the task at hand.
-```
+- There is a difference of a result between "netscan" and "netstat" at volatility.  
+[details](#a-difference-between-netscan-and-netstat-at-volatility)
 
 ## #1
 ```
@@ -65,6 +55,17 @@ $ vol3 -f 20210430-Win10Home-20H2-64bit-memdump.mem windows.cmdline.CmdLine --pi
 ```
 $ vol3 -f 20210430-Win10Home-20H2-64bit-memdump.mem windows.registry.userassist > windows_registry_userassist.txt
 ```
- 
+
+## description
+### A difference between "netscan" and "netstat" at volatility.
+The difference in results between using the netscan plugin and the netstat plugin in the Volatility framework can be attributed to the different sources of information they use and the way they process that information.
+
+The netscan plugin uses memory dumps to scan for and extract information about active network connections. It searches for various data structures in memory, such as TCP and UDP tables, to gather information about open connections and the state of those connections.
+
+On the other hand, the netstat plugin uses the output of the netstat command, which is a command-line utility that displays active network connections and network statistics. The netstat plugin runs the netstat command within the context of a profile and collects the output of the command, which is then processed and analyzed by the plugin.
+
+Due to the differences in the sources of information used by the netscan and netstat plugins, it is possible for the results obtained by these plugins to be different. For example, the netscan plugin may reveal network connections that are not shown by the netstat plugin, or vice versa. Additionally, the way that the plugins process the information they gather can also lead to differences in the results.
+
+In general, the choice of plugin to use in a given scenario depends on the specific requirements of the analysis, the state of the system being analyzed, and the type of information that is required. It is important to understand the strengths and limitations of each plugin and choose the one that is best suited to the task at hand.
 
  
