@@ -50,7 +50,12 @@ $ vol3 -f 20210430-Win10Home-20H2-64bit-memdump.mem -o ./output windows.pslist.P
 ```
   
 ## #7
-binary editor  
+binary editor or volshell
+```
+$ vol2 -f 20210430-Win10Home-20H2-64bit-memdump.mem --profile=Win10x64_19041 volshell
+>>> db(0x45BE876, space=addrspace().base)
+```
+volshell 3 doesn`t work. why...  
   
 ## #8
 ```
