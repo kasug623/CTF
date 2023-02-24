@@ -64,6 +64,11 @@ export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F
 # export PS1=' %F{014}$%f '
 ```
 
+## pa2
+```
+
+```
+
 # Python
 ## python2 tool
 ### peepdf
