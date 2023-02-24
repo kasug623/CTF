@@ -1,4 +1,8 @@
 # Writeup
+
+## after ctf
+- how to use `editbox` plugin at volatility2
+
 ## #1
 ```
 $ vol3 -f win7ecorpoffice2010-36b02ed3.vmem windows.info.Info > windows_info_Info.txt
@@ -17,3 +21,24 @@ $ vol3 -f win7ecorpoffice2010-36b02ed3.vmem windows.netscan.NetScan > windows_ne
 $ vol3 -f win7ecorpoffice2010-36b02ed3.vmem windows.netstat.NetStat > windows_netstat_NetStat.txt
 $ cat windows_netscan_NetScan.txt | sed '1,2d' | sed '2d' | tr '\t' ',' > windows_netscan_NetScan.csv
 ```
+
+## #3
+could not find the answer
+
+## #4
+could not find the answer
+I don't know `editbox` well.
+
+## #5
+```
+$ vol2 -f win7ecorpoffice2010-36b02ed3.vmem --profile=Win7SP1x64 yarascan -p 2692 -Y "From:"
+```
+
+## #6
+```
+$ vol2 -f win7ecorpoffice2010-36b02ed3.vmem --profile=Win7SP1x64 dumpfiles -u --physoffset=0x7d4d9450 --dump-dir=./vol2/dumpfiles
+$ vol2 -f win7ecorpoffice2010-36b02ed3.vmem --profile=Win7SP1x64 dumpfiles -u --physoffset=0x7db2b520 --dump-dir=./vol2/dumpfiles
+$ vol2 -f win7ecorpoffice2010-36b02ed3.vmem --profile=Win7SP1x64 dumpfiles -u --physoffset=0x7fd38c80 --dump-dir=./vol2/dumpfiles
+```
+filedumop is not clear.
+and I have to build environment ofr opening .pst and .ost
