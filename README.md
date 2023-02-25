@@ -4,7 +4,7 @@
 # CTF environment
 ## HOST
 ### VMWare Workstation
-put on Intel VT-x/EPT Virtualization 
+put on Intel VT-x/EPT Virtualization  
 ![ScreenShot_VMWareWorkstation Image](doc/image/ScreenShot_VMWareWorkstation.png) 
 
 ### cmd
