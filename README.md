@@ -7,14 +7,22 @@ system sound off due to noisy at click tab many times.
 ```
 $ sudo apt install zsh
 $ chsh -s $(which zsh)
-$ sudo apt isntall john
+$ sudo apt install john
 $ sudo apt install binwalk
 $ sudo apt install foremost
 $ sudo apt install exiftool
-$ pip install virtualenv
 $ sudo apt install qpdf
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
+$ git clone https://github.com/keydet89/RegRipper3.0.git
+$ git clone https://github.com/volatilityfoundation/volatility.git
+$ git clone https://github.com/volatilityfoundation/volatility3.git
+$ mkdir -p /home/user/DidierStevensTool/oledump
+$ mkdir -p /home/user/DidierStevensTool/pdf-parser
+$ mkdir -p /home/user/DidierStevensTool/pdfid
+$ pip install virtualenv
+$ mkdir /home/user/virtual_py2
+$ mkdir /home/user/virtual_py3
 ```
 
 ##### when you fail "apt update"
@@ -52,6 +60,7 @@ alias gs='git switch'
 alias ctf='cd /mnt/c/Users/user/CTF/CyberDefenders/43_BankingTroubles/c27-banking-troubles'
 export PATH=$PATH:/home/user/DidierStevensTool/oledump
 export PATH=$PATH:/home/user/DidierStevensTool/pdf-parser
+export PATH=$PATH:/home/user/DidierStevensTool/pdfid
 export PATH=$PATH:/home/user/DidierStevensTool/js-1.7.0-mod-c/Windows
 export PATH=$PATH:/home/user/RegRipper3.0
 export PATH=$PATH:/home/user/anaconda3/bin
