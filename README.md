@@ -18,28 +18,7 @@ bcdedit /set hypervisorlaunchtype off
 system sound off due to noisy at click tab many times.
 
 #### WSL
-```
-$ sudo apt install zsh
-$ chsh -s $(which zsh)
-$ sudo apt install john
-$ sudo apt install binwalk
-$ sudo apt install foremost
-$ sudo apt install exiftool
-$ sudo apt install qpdf
-$ cd ~/
-$ git clone https://github.com/jesparza/peepdf.git
-$ git clone https://github.com/keydet89/RegRipper3.0.git
-$ git clone https://github.com/volatilityfoundation/volatility.git
-$ git clone https://github.com/volatilityfoundation/volatility3.git
-$ mkdir -p /home/user/DidierStevensTool/oledump
-$ mkdir -p /home/user/DidierStevensTool/pdf-parser
-$ mkdir -p /home/user/DidierStevensTool/pdfid
-$ pip install virtualenv
-$ mkdir /home/user/virtual_py2
-$ mkdir /home/user/virtual_py3
-```
-
-##### when you fail "apt update"
+##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
 So, 'WSL restart' will be needed.  
 But sometimes, a time of host machine VM will be off.  
@@ -66,7 +45,7 @@ alias pa3='source /home/user/virtual_py3/bin/activate'
 alias pa3j='source /home/user/virtual_py3.10_jupyterlab/bin/activate'
 alias pd='deactivate'
 alias vol2='sudo ~/virtual_py2/bin/python2.7 ~/volatility/vol.py'
-alias vol3='sudo ~/virtual_py3/bin/python3 ~/volatility3/vol.py'
+alias vol3='sudo ~/virtual_py3/bin/python3.10 ~/volatility3/vol.py'
 alias volshell3='sudo ~/virtual_py3/bin/python3 ~/volatility3/volshell.py'
 alias a='uname -a'
 alias gb='git branch'
@@ -87,96 +66,124 @@ export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F
 # export PS1=' %F{014}$%f '
 ```
 
-##### vim color
+
+##### vim
+###### put a custom color sheme
+the way to put depends on the color sheme.
 ```
 ~/.vim/colors
 (put here iceberg.vim which is downloaded by Internet)
 ```
 
-##### .vimrc
-```
-cd ~/
-vim .vimrc
-```
+###### .vimrc
 ```
 inoremap <silent> jj <ESC>
+set relativenumber
+
+# depends on a installed color scheme
 syntax on
-colorscheme iceberg
+set background=dark
+colorscheme everforest
 ```
 
-##### .dircolors
-Default powershell terminal at Windows are not good for bash "ls" looks.
-```
-$ cp (.dircolors) ~/
-```
 
-##### python
-For use Python2 and Python3, virtualenv is installed.
+##### setup
 ```
-$ sudo apt install python3
-$ sudo apt install python2
-$ sudo apt install python3-virtualenv
+$ sudo apt install zsh
+$ chsh -s $(which zsh)
+$ sudo apt install john
+$ sudo apt install binwalk
+$ sudo apt install foremost
+$ sudo apt install exiftool
+$ sudo apt install qpdf
+$ sudo apt install cpanminus # for RegRipper
 $ cd ~/
-$ virtualenv virtual_py3
-$ virtualenv -p python2.7 virtual_py2
-```
-
-##### volatility3
-```
+$ git clone https://github.com/jesparza/peepdf.git
+$ git clone https://github.com/keydet89/RegRipper3.0.git
+$ git clone https://github.com/volatilityfoundation/volatility.git
+$ git clone https://github.com/volatilityfoundation/volatility3.git
+$ mkdir -p /home/user/DidierStevensTool/oledump
+$ mkdir -p /home/user/DidierStevensTool/pdf-parser
+$ mkdir -p /home/user/DidierStevensTool/pdfid
+#
+#
+# ----- python ------
+# - For use Python2 and Python3, virtualenv is installed.
+#
+$ sudo apt install python3.10
+$ sudo apt install python2.7
+$ sudo apt install python3-virtualenv
+$ sudo apt install python2-pip-whl
+$ sudo apt install python2-setuptools-whl
+$ cd ~/
+$ mkdir /home/user/virtual_py3.10
+$ mkdir /home/user/virtual_py2.7
+$ virtualenv -p python3.10 virtual_py3.10
+$ virtualenv -p python2.7 virtual_py2.7
+# -------------------
+#
+#
+# --- volatility3 ---
 $ cd ~/
 $ git clone https://github.com/volatilityfoundation/volatility3.git
-```
-test
-```
+#
+# - test
+#
 $ pa3
 $ vol3 -h
-```
-
-##### volatility2
-```
-cd ~/
-git clone https://github.com/volatilityfoundation/volatility.git
-sudo apt-get install python2.7-dev
-pa2
-// load necessary modules with pip
-pip install pycryptodome
-// manually load necessary modules.
-// distorm3 is deleted pip repo so need to install manually. Then high version of distrom3 does not suit to volatility2. 
-cd ~/virtual_py2/lib/python2.7/site-packages/
-wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/distorm3/3.4.1-5/distorm3_3.4.1.orig.tar.gz
-tar -zxvf distorm3_3.4.1.orig.tar.gz
-rm distorm3_3.4.1.orig.tar.gz
-```
-test
-```
-// already alias is created
-pa2
-vol2 -h
-```
-
-##### oledump
-```
-cd ~/
-mkdir oledump
-cd oledump
-wget https://didierstevens.com/files/software/oledump_V0_0_71.zip
-unzip oledump_V0_0_71.zip
-pa3
-pip install olefile
-chmod +x oledump.py
-```
-test
-```
-oleduump.py -h
-```
-
-##### RegRipper
-```
-https://github.com/keydet89/RegRipper3.0.git
-sudo apt install cpanminus
-chmod +x rip.pl
-```
-test
-```
-perl rip.pl
+$
+$ pip install pycrypto
+$ pip install pefile
+$ pip install yara-python
+# -------------------
+#
+#
+# --- volatility2 ---
+$ cd ~/
+$ git clone https://github.com/volatilityfoundation/volatility.git
+#
+# - test
+#
+$ pa2
+$ vol2 -h
+#
+# - load necessary modules with pip
+#
+$ pip install pycryptodome
+$ pip2 install distorm3==3.3.4
+#
+# - If you failed to install distorm with pip, you have to manually load necessary modules.
+# -- distorm3 is deleted pip repo so need to install manually. Then high version of distrom3 does not suit to volatility2. 
+# --- $ cd ~/virtual_py2.7/lib/python2.7/site-packages/
+# --- $ wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/distorm3/3.4.1-5/distorm3_3.4.1.orig.tar.gz
+# --- $ tar -zxvf distorm3_3.4.1.orig.tar.gz
+# --- $ rm distorm3_3.4.1.orig.tar.gz
+# -------------------
+#
+#
+# ---- oledump ----
+$ cd /home/user/DidierStevensTool/oledump
+$ wget https://didierstevens.com/files/software/oledump_V0_0_71.zip
+$ unzip oledump_V0_0_71.zip
+$ chmod +x oledump.py
+$ pa3
+#
+# - test
+#
+$ oledump.py -h
+$
+$ pip install olefile
+$
+$ oledump.py -h
+# ------------------
+#
+#
+# ---- RegRipper ----
+$ cd /home/user/RegRipper3.0
+& chmod +x rip.pl
+#
+# - test
+#
+$ perl rip.pl
+# -------------------
 ```
