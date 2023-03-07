@@ -29,7 +29,7 @@ $ wsl --shutdown
 $ wsl
 ```
 
-##### .zshrc
+##### ~/.zshrc
 ```
 # my setting
 # setxkbmap -layout jp
@@ -66,7 +66,6 @@ export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F
 # export PS1=' %F{014}$%f '
 ```
 
-
 ##### vim
 ###### put a custom color sheme
 the way to put depends on the color sheme.
@@ -75,7 +74,7 @@ the way to put depends on the color sheme.
 (put here iceberg.vim which is downloaded by Internet)
 ```
 
-###### .vimrc
+###### ~/.vimrc
 ```
 inoremap <silent> jj <ESC>
 set relativenumber
@@ -86,6 +85,11 @@ set background=dark
 colorscheme everforest
 ```
 
+##### /etc/wsl.conf
+```
+[boot]
+systemd=true
+```
 
 ##### setup
 ```
@@ -186,4 +190,54 @@ $ cd /home/user/RegRipper3.0
 #
 $ perl rip.pl
 # -------------------
+#
+# ----- Arkime ------
+$ mkdir ~/arkime
+$ cd ~/arkime
+$
+# just follow official instructions at arkime HP
+## download arikime .deb
+$ wget (URL written in Arkime HP)
+$ dpkg -i XXX.deb
+#
+## install elasticsearch (https://raw.githubusercontent.com/arkime/arkime/main/release/README.txt)
+### follow oficial manual
+$ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.6.2-linux-x86_64.tar.gz
+$ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512
+$ shasum -a 512 -c elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512 
+$ tar -xzf elasticsearch-8.6.2-linux-x86_64.tar.gz
+$ cd ~/arkimeelasticsearch-8.6.2/ 
+### disable TLS on elasticsearch.yml
+$ vim ~/arkimeelasticsearch-8.6.2/elasticsearch.yml
+# 
+#
+$ /opt/arkime/bin/Configure
+$ /opt/arkime/db/db.pl http://localhost:9200 init
+#
+# set ID/PW
+##  user: foo_user
+##  password: foo_password
+$ /opt/arkime/bin/arkime_add_user.sh foo_user "Admin User" foo_password --admin 
+#
+# -------------------
+#
+#
+```
+
+##### elasticsearch for arkime
+###### elasticsearch.yml
+```
+xpack.security.autoconfiguration.enabled: false
+
+xpack.security.enabled: false
+
+xpack.security.http.ssl:
+  enabled: false
+
+xpack.security.transport.ssl:
+  enabled: false
+
+cluster.initial_master_nodes: ["DESKTOP-LM712CE"]
+
+http.host: 0.0.0.0
 ```
