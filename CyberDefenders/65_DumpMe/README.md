@@ -88,5 +88,5 @@ $ grep -A 50 --color 59045 mftparser.txt
 ```
 
 # #16
-find suspicious process and dump it.
+find suspicious process and dump it.  
 use VT and check whether it is created by meterpreter.
