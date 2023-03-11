@@ -102,6 +102,7 @@ $ sudo apt install foremost
 $ sudo apt install exiftool
 $ sudo apt install qpdf
 $ sudo apt install cpanminus # for RegRipper
+$ sudo apt install tshark
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
 $ git clone https://github.com/keydet89/RegRipper3.0.git
