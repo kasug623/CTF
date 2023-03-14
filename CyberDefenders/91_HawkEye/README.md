@@ -53,3 +53,31 @@ Wireshark
 ```
 frame.number gt 203 && dns
 ```
+
+# #12
+search on WEB
+
+another solution: install MaxMind Geo IP on Wireshark
+
+# #13
+Wireshark.  
+check UserAgemt of malicious HTTP connections.  
+  
+I think this is not good question.
+Windows NT 6.1 should be called OS version??
+
+# #14
+Arkime
+```
+ip == 217[.]182.138.150
+```
+
+# #15
+Arkime
+
+# #16
+VT
+
+# #17
+NetworkMiner
+caution: use copy otherwise use misunderstand the spell
