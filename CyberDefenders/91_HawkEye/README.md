@@ -2,6 +2,7 @@
 # study after ctf
 - #9, how to detect dns query. about DNS frame structure around flag
 - #11, DNS frame structure around query and response
+- #21, how to check dest email server's software
 
 # #1
 ```
@@ -81,3 +82,19 @@ VT
 # #17
 NetworkMiner
 caution: use copy otherwise use misunderstand the spell
+
+# #18
+Wireshark
+
+# #19
+Arikime, and https://www.he.net/
+
+# #20
+check mail domain
+```
+whois macwinlogistics.in
+```
+
+# #21
+check SMTP 220
+use Wireshark
