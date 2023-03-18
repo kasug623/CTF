@@ -17,6 +17,12 @@ bcdedit /set hypervisorlaunchtype off
 ### Windows OS
 system sound off due to noisy at click tab many times.
 
+#### GUI app
+- Process Hacker
+- Wireshark
+- Geo IP Database for Wireshark
+https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%20and%20software,information%20for%20an%20IP%20address.
+
 #### WSL
 ##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
