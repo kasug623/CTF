@@ -1,10 +1,14 @@
 # WriteUps
 ## lesson
-- how to detect dns query. about DNS frame structure around flag(#11)
+- use copy-and-paste as much as possible  
+Because you take a misstake especially when you are tired.  
+- DNS frame structure around flag(#11)  
+how to search dns query  
 ![dns](image/dns.png)  
-- MAXMIND's GeoIP Database for Wireshark
+- MAXMIND's GeoIP Database for Wireshark  
 ![GeoLite](image/GeoLite.png)  
-- how to check email server's software(#21)
+- SMTP flow  
+how to check email server's software(#21)  
 ![smtp-1](image/smtp-1.png)  
 ![smtp-2](image/smtp-2.png)
 
