@@ -1,7 +1,7 @@
 # WriteUps
 ## lesson
 - use copy-and-paste as much as possible  
-Because you take a misstake especially when you are tired.  
+Because you mistype especially when you are tired.  
 - DNS frame structure around flag(#11)  
 how to search dns query  
 ![dns](image/dns.png)  
