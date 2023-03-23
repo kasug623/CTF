@@ -233,7 +233,21 @@ $ /opt/arkime/bin/arkime_add_user.sh foo_user "Admin User" foo_password --admin
 #
 # -------------------
 #
-#
+# ----- nfdump ------
+$ git clone https://github.com/phaag/nfdump.git
+$ cd nfdump
+$ sudo apt install libtool -y
+$ ./autogen.sh
+$ sudo apt install flex
+$ sudo apt install ibbz2-dev
+## for nfpcapd
+$ sudo apt install libpcap-dev
+$ ./configure --enable-nfpcapd
+$ make
+$ sudo make install
+$ sudo ldconfig
+$ ldconfig -v
+# -------------------
 ```
 
 ##### elasticsearch for arkime
