@@ -30,3 +30,23 @@ export object with Wireshark.
 ```
 $ exiftool 20210429_152157.jpg | grep -i camera
 ```
+
+## #7
+```
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.handshake.session_id' -T fields -e frame.number
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.handshake.session_id' -T fields -e frame.number -e tls.handshake.session_id
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.handshake.session_id' -T fields -e frame.number -e tls.handshake.session_id | grep da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'frame.number == 26913' -T fields -e tls.handshake.server_point
+```
+this comman dons not work. why?
+```
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.handshake.session_id == da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff' -T fields -e frame.number
+tshark: "da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff" is not a valid byte string.
+```
+
+## #8
+```
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -V | grep -A 5 -B 5 --color 'protonmail.com'
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'ip.addr == 185.70.41.35 and tls.handshake.random' -T fields -e frame.number
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'ip.addr == 185.70.41.35 and tls.handshake.random' -T fields -e frame.number -e tls.handshake.random
+```
