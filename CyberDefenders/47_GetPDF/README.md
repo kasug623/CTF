@@ -1,4 +1,7 @@
 # Writeup
+## point
+- For searching js data in pcap, fully relying on `content-type` is not good.
+
 ## #1
 ```
 $ capinfos lala.pcap
