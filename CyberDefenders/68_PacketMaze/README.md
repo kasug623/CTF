@@ -1,3 +1,9 @@
+# Writeup
+## point
+- How to handle ftp which is multi stream protocol
+- Check tls protocol stack and compared with Wireshark display values.
+- In a filter of Wireshark and tshark, a long string might not work well.
+
 ## #1
 ```
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'ftp or tcp.port == 21 or tcp.port == 20' -V | grep pass -i -A 15 -B 15 --color
@@ -38,7 +44,7 @@ $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.h
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.handshake.session_id' -T fields -e frame.number -e tls.handshake.session_id | grep da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'frame.number == 26913' -T fields -e tls.handshake.server_point
 ```
-this comman dons not work. why?
+This command does not work. why?
 ```
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'tls.handshake.session_id == da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff' -T fields -e frame.number
 tshark: "da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff" is not a valid byte string.
@@ -49,4 +55,25 @@ tshark: "da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff" is no
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -V | grep -A 5 -B 5 --color 'protonmail.com'
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'ip.addr == 185.70.41.35 and tls.handshake.random' -T fields -e frame.number
 $ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'ip.addr == 185.70.41.35 and tls.handshake.random' -T fields -e frame.number -e tls.handshake.random
+```
+
+## #9
+tshark, Wireshark, google
+```
+$ tshark -r UNODC-GPC-001-003-JohnDoe-NetworkCapture-2021-04-29.pcapng -Y 'ftp' -w ftp.pcap
+```
+
+## #10
+Wireshark, use tcp stream
+
+other approach
+```
+ftp-data.command == "LIST"
+```
+
+## #11
+Wireshark
+```
+frame.number == 27300
+dns.a == 172[.]67.162.206
 ```

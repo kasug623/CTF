@@ -112,6 +112,7 @@ $ sudo apt install qpdf
 $ sudo apt install cpanminus # for RegRipper
 $ sudo apt install tshark
 $ sudo apt install whois
+$ sudo apt install ngrep
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
 $ git clone https://github.com/keydet89/RegRipper3.0.git
