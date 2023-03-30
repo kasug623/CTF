@@ -13,3 +13,12 @@ Wireshark. pick up suspicious "http" found in #1 and follow http stream.
 ```
 http
 ```
+
+## #3
+extract javascript from HTTP stream and use Spidermonkey
+```
+$ code ./script.js
+$ js-beautify -f ./script.js > ./script-b.js
+$ js -f ./my-objects.js -f ./script.js > ./out.js
+$ js-beautify -f ./out.js > ./out-b.js
+```
