@@ -22,3 +22,27 @@ $ js-beautify -f ./script.js > ./script-b.js
 $ js -f ./my-objects.js -f ./script.js > ./out.js
 $ js-beautify -f ./out.js > ./out-b.js
 ```
+
+## #4
+exprt pdf with Wireshark and calc md5
+```
+$ md5sum fcexploit.pdf
+```
+
+## #5
+```
+$ pdfid.py fcexploit.pdf
+```
+
+## #6
+```
+$ pdf-parser.py fcexploit.pdf | grep -i filter -B 5 -A 5
+```
+
+## #7
+```
+$ pdf-parser.py fcexploit.pdf -s javascript
+```
+
+# #8
+https://forensicskween.com/ctf/cyberdefenders/getpdf/
