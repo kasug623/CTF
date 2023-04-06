@@ -46,3 +46,10 @@ $ pdf-parser.py fcexploit.pdf -s javascript
 
 # #8
 https://forensicskween.com/ctf/cyberdefenders/getpdf/
+
+# #9
+```
+$ echo -en "\x25\x75\x64\x33\x62\x38....hogehoge" > exploit.bin
+$ xxd -gl exploit.bin
+$ scdbg -f ./exploit.bin  -s -l
+```
