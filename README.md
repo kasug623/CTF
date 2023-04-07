@@ -133,6 +133,7 @@ $ mkdir -p /home/user/DidierStevensTool/pdf-parser
 $ mkdir -p /home/user/DidierStevensTool/pdfid
 ##
 ## ----- completion for git at zsh ------
+### https://qiita.com/mikan3rd/items/d41a8ca26523f950ea9d
 $ mkdir ~/.zsh
 $ cd ~/.zsh
 $
