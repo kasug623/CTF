@@ -1,5 +1,7 @@
 # TOC
-
+- [CTF environment](#ctf-environment)
+  - [HOST](#host)
+  - [Setup VM](#setup-vm)
 
 # CTF environment
 ## HOST
@@ -69,6 +71,12 @@ export PATH=$PATH:/home/user/peepdf
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
+## load git-prompt
+source ~/.zsh/git-prompt.sh
+## laod git-completion
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+autoload -Uz compinit && compinit
 
 # for show others
 # export PS1=' %F{014}$%f '
@@ -113,6 +121,8 @@ $ sudo apt install cpanminus # for RegRipper
 $ sudo apt install tshark
 $ sudo apt install whois
 $ sudo apt install ngrep
+$ sudo apt install clamav clamav-daemon
+$ freshclam
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
 $ git clone https://github.com/keydet89/RegRipper3.0.git
@@ -121,11 +131,20 @@ $ git clone https://github.com/volatilityfoundation/volatility3.git
 $ mkdir -p /home/user/DidierStevensTool/oledump
 $ mkdir -p /home/user/DidierStevensTool/pdf-parser
 $ mkdir -p /home/user/DidierStevensTool/pdfid
-#
-#
-# ----- python ------
-# - For use Python2 and Python3, virtualenv is installed.
-#
+##
+## ----- completion for git at zsh ------
+$ mkdir ~/.zsh
+$ cd ~/.zsh
+$
+$ curl -o git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+$ curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+$ curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh 
+##
+## --------------------------------------
+##
+## ----- python ------
+## - For use Python2 and Python3, virtualenv is installed.
+##
 $ sudo apt install python3.10
 $ sudo apt install python2.7
 $ sudo apt install python3-virtualenv
@@ -136,108 +155,108 @@ $ mkdir /home/user/virtual_py3.10
 $ mkdir /home/user/virtual_py2.7
 $ virtualenv -p python3.10 virtual_py3.10
 $ virtualenv -p python2.7 virtual_py2.7
-# -------------------
-#
-#
-# --- volatility3 ---
+## -------------------
+##
+##
+## --- volatility3 ---
 $ cd ~/
 $ git clone https://github.com/volatilityfoundation/volatility3.git
-#
-# - test
-#
+##
+## - test
+##
 $ pa3
 $ vol3 -h
 $
 $ pip install pycrypto
 $ pip install pefile
 $ pip install yara-python
-# -------------------
-#
-#
-# --- volatility2 ---
+## -------------------
+##
+##
+## --- volatility2 ---
 $ cd ~/
 $ git clone https://github.com/volatilityfoundation/volatility.git
-#
-# - test
-#
+##
+## - test
+##
 $ pa2
 $ vol2 -h
-#
-# - load necessary modules with pip
-#
+##
+## - load necessary modules with pip
+##
 $ pip install pycryptodome
 $ pip2 install distorm3==3.3.4
-#
-# - If you failed to install distorm with pip, you have to manually load necessary modules.
-# -- distorm3 is deleted pip repo so need to install manually. Then high version of distrom3 does not suit to volatility2. 
-# --- $ cd ~/virtual_py2.7/lib/python2.7/site-packages/
-# --- $ wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/distorm3/3.4.1-5/distorm3_3.4.1.orig.tar.gz
-# --- $ tar -zxvf distorm3_3.4.1.orig.tar.gz
-# --- $ rm distorm3_3.4.1.orig.tar.gz
-# -------------------
-#
-#
-# ---- oledump ----
+##
+## - If you failed to install distorm with pip, you have to manually load necessary modules.
+## -- distorm3 is deleted pip repo so need to install manually. Then high version of distrom3 does not suit to volatility2. 
+## --- $ cd ~/virtual_py2.7/lib/python2.7/site-packages/
+## --- $ wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/distorm3/3.4.1-5/distorm3_3.4.1.orig.tar.gz
+## --- $ tar -zxvf distorm3_3.4.1.orig.tar.gz
+## --- $ rm distorm3_3.4.1.orig.tar.gz
+## -------------------
+##
+##
+## ---- oledump ----
 $ cd /home/user/DidierStevensTool/oledump
 $ wget https://didierstevens.com/files/software/oledump_V0_0_71.zip
 $ unzip oledump_V0_0_71.zip
 $ chmod +x oledump.py
 $ pa3
-#
-# - test
-#
+##
+## - test
+##
 $ oledump.py -h
 $
 $ pip install olefile
 $
 $ oledump.py -h
-# ------------------
-#
-#
-# ---- RegRipper ----
+## ------------------
+##
+##
+## ---- RegRipper ----
 $ cd /home/user/RegRipper3.0
 & chmod +x rip.pl
-#
-# - test
-#
+##
+## - test
+##
 $ perl rip.pl
-# -------------------
-#
-# ----- Arkime ------
+## -------------------
+##
+## ----- Arkime ------
 $ mkdir ~/arkime
 $ cd ~/arkime
 $
-# just follow official instructions at arkime HP
-## download arikime .deb
+## just follow official instructions at arkime HP
+### download arikime .deb
 $ wget (URL written in Arkime HP)
 $ dpkg -i XXX.deb
-#
-## install elasticsearch (https://raw.githubusercontent.com/arkime/arkime/main/release/README.txt)
-### follow oficial manual
+##
+### install elasticsearch (https://raw.githubusercontent.com/arkime/arkime/main/release/README.txt)
+#### follow oficial manual
 $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.6.2-linux-x86_64.tar.gz
 $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512
 $ shasum -a 512 -c elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512 
 $ tar -xzf elasticsearch-8.6.2-linux-x86_64.tar.gz
 $ cd ~/arkimeelasticsearch-8.6.2/
-#
-### disable TLS on elasticsearch.yml
+##
+#### disable TLS on elasticsearch.yml
 $ vim ~/arkimeelasticsearch-8.6.2/elasticsearch.yml
-# 
-#
+## 
+##
 $ /opt/arkime/bin/Configure
 $ /opt/arkime/db/db.pl http://localhost:9200 init
-#
-# set ID/PW
-##  user: foo_user
-##  password: foo_password
+##
+## set ID/PW
+###  user: foo_user
+###  password: foo_password
 $ /opt/arkime/bin/arkime_add_user.sh foo_user "Admin User" foo_password --admin 
-#
-# -------------------
-#
-# ----- nfdump ------
-## https://github.com/phaag/nfdump
-## https://gist.github.com/jjsantanna/f2ee2f1fe23208299f4a2ca392f8b23f?permalink_comment_id=3749338
-## https://rc30-popo.hatenablog.com/entry/2019/02/02/000702
+##
+## -------------------
+##
+## ----- nfdump ------
+### https://github.com/phaag/nfdump
+### https://gist.github.com/jjsantanna/f2ee2f1fe23208299f4a2ca392f8b23f?permalink_comment_id=3749338
+### https://rc30-popo.hatenablog.com/entry/2019/02/02/000702
 $ cd ~/
 $ git clone https://github.com/phaag/nfdump.git
 $ cd nfdump
@@ -245,13 +264,13 @@ $ sudo apt install libtool -y
 $ ./autogen.sh
 $ sudo apt install flex
 $ sudo apt install ibbz2-dev
-## for nfpcapd
+### for nfpcapd
 $ sudo apt install libpcap-dev
 $ ./configure --enable-nfpcapd
 $ make
 $ sudo make install
 $ sudo ldconfig
-# -------------------
+## -------------------
 ```
 
 ##### elasticsearch for arkime
