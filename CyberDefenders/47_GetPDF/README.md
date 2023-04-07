@@ -53,3 +53,10 @@ $ echo -en "\x25\x75\x64\x33\x62\x38....hogehoge" > exploit.bin
 $ xxd -gl exploit.bin
 $ scdbg -f ./exploit.bin  -s -l
 ```
+
+# #10
+Wireshark
+
+# #11
+Google  
+Are there any other good solution?
