@@ -7,4 +7,5 @@
 
 # white list
 !.gitignore
-!CyberDefenders/*/*
+!CyberDefenders/*/README.md
+!CyberDefenders/*/image/*
