@@ -71,9 +71,11 @@ export PATH=$PATH:/home/user/peepdf
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
-## load git-prompt
+##
+## improve zsh
+### load git-prompt
 source ~/.zsh/git-prompt.sh
-## laod git-completion
+### laod git-completion
 fpath=(~/.zsh $fpath)
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 autoload -Uz compinit && compinit
@@ -122,7 +124,7 @@ $ sudo apt install tshark
 $ sudo apt install whois
 $ sudo apt install ngrep
 $ sudo apt install clamav clamav-daemon
-$ freshclam
+$ sudo freshclam
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
 $ git clone https://github.com/keydet89/RegRipper3.0.git
