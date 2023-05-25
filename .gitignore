@@ -10,7 +10,19 @@
 !CyberDefenders/*/README.md
 !CyberDefenders/*/image/*
 !BlueTeamLabsOnline/*/README.md
+!picoCTF2021/*/*/README.md
+!picoCTF2021/*/*/*
+!picoCTF2021/*/*/*/*
+!picoCTF2021/*/*/*/*/*
+!picoCTF2022/*/*/README.md
+!picoCTF2022/*/*/*
+!picoCTF2022/*/*/*/*
+!picoCTF2022/*/*/*/*/*
 !picoCTF2023/*/*/README.md
 !picoCTF2023/*/*/*
 !picoCTF2023/*/*/*/*
 !picoCTF2023/*/*/*/*/*
+
+# intended black list
+picoCTF2021/Web_Exploitation/Java_Code_Analysis/bookshelf-pico
+picoCTF2021/Web_Exploitation/Java_Code_Analysis/bookshelf-pico.zip
