@@ -22,6 +22,10 @@
 !picoCTF2023/*/*/*
 !picoCTF2023/*/*/*/*
 !picoCTF2023/*/*/*/*/*
+!picoGymExclusive/*/*/README.md
+!picoGymExclusive/*/*/*
+!picoGymExclusive/*/*/*/*
+!picoGymExclusive/*/*/*/*/*
 
 # intended black list
 picoCTF2021/Web_Exploitation/Java_Code_Analysis/bookshelf-pico
