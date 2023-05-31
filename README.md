@@ -64,7 +64,7 @@ alias elasticsearch='/home/user/arkime/elasticsearch-8.6.2/bin/elasticsearch'
 alias arkimeviewer='cd /opt/arkime/viewer && /opt/arkime/bin/node /opt/arkime/viewer/viewer.js'
 alias gb='git branch'
 alias gs='git switch'
-alias ctf='cd /mnt/c/Users/user/CTF/CyberDefenders/43_BankingTroubles/c27-banking-troubles'
+alias ctf='cd /mnt/c/Users/user/CTF/picoCTF2021/Binary_Exploitation/Stonks'
 export PATH=$PATH:/home/user/DidierStevensTool/oledump
 export PATH=$PATH:/home/user/DidierStevensTool/pdf-parser
 export PATH=$PATH:/home/user/DidierStevensTool/pdfid
@@ -278,6 +278,25 @@ $ make
 $ sudo make install
 $ sudo ldconfig
 ## -------------------
+##
+## ----- gdbgui ------
+$ pa3
+$ pip install gdbgui
+$ gdbgui
+## -------------------
+##
+## ----- gdb-peda ------
+$ git clone https://github.com/longld/peda.git ~/peda
+$ echo "source ~/peda/peda.py" >> ~/.gdbinit
+## -------------------
+##
+## ------pwntools--------
+### https://docs.pwntools.com/en/stable/install.html
+### python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential is needed,
+### but only libssl-dev was not installed.
+$ apt install libssl-dev
+$ pa3
+$ pip install pwntools
 ```
 
 ##### elasticsearch for arkime
