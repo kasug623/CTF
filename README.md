@@ -28,6 +28,7 @@ https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%
 - BurpSuite
 - Firefox
 set CA and FoxyProxy for BurpSuite
+- VSCode
 
 #### WSL
 ##### when you fail `apt update`
