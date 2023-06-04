@@ -1,7 +1,18 @@
 # TOC
 - [CTF environment](#ctf-environment)
   - [HOST](#host)
+    - [VMWare Workstaion](#vmware-workstation)
+    - [cmd](#cmd)
   - [Setup VM](#setup-vm)
+    - [Windows OS](#windows-os)
+        - [GUI app](#gui-app)
+        - [WSL](#wsl)
+            - [.zshrc](#zshrc)
+            - [Vim](#vim)
+            - [wsl.conf](#etcwslconf)
+            - [VSCode](#vscode)
+            - [setup](#setup)
+            - [elasticsearch for arkime](#elasticsearch-for-arkime)
   - [How to Write Script](#)
 
 # CTF environment
@@ -20,7 +31,7 @@ bcdedit /set hypervisorlaunchtype off
 ### Windows OS
 system sound off due to noisy at click tab many times.
 
-#### GUI app
+#### GUI App
 - Process Hacker
 - Wireshark
 - Geo IP Database for Wireshark
@@ -34,7 +45,7 @@ set CA and FoxyProxy for BurpSuite
         - vim
         - zenkaku
         - Highlight Trailing White Spaces
-
+        - WSL
 #### WSL
 ##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
@@ -114,7 +125,7 @@ colorscheme everforest
 ```
 
 ##### /etc/wsl.conf
-caution: systemd=tru conflicts with code(VSCode) on WSL
+caution: systemd=true conflicts with code(VSCode) on WSL
 ```
 [boot]
 systemd=true
@@ -352,6 +363,6 @@ http.host: 0.0.0.0
 ```
 
 ## How to Write Script
-1. edit .vscode/launch.json
-2. edit setting.json for WSL
-3. debug with VSCode
+1. edit `.vscode/launch.json`
+2. edit `setting.json` for `WSL`
+3. debug with `VSCode`
