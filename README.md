@@ -115,8 +115,31 @@ caution: systemd=tru conflicts with code(VSCode) on WSL
 systemd=true
 ```
 
-##### setup
+##### VSCode
+```json
+{
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "python.analysis.extraPaths": [
+        "/home/user/virtual_py3.10/lib/python3.10/site-packages"
+    ],
+    "python.autoComplete.extraPaths": [
+        "/home/user/virtual_py3.10/lib/python3.10/site-packages"
+    ],
+}
 ```
+
+##### setup
+```bash
 $ sudo apt install zsh
 $ chsh -s $(which zsh)
 $ sudo apt install john
@@ -298,11 +321,16 @@ $ echo "source ~/peda/peda.py" >> ~/.gdbinit
 $ apt install libssl-dev
 $ pa3
 $ pip install pwntools
+## -------------------
+##
+## ------vscode-------
+$ code
+## -------------------
 ```
 
 ##### elasticsearch for arkime
 ###### elasticsearch.yml
-```
+```json
 xpack.security.autoconfiguration.enabled: false
 
 xpack.security.enabled: false
