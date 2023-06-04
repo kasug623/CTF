@@ -2,6 +2,7 @@
 - [CTF environment](#ctf-environment)
   - [HOST](#host)
   - [Setup VM](#setup-vm)
+  - [How to Write Script](#)
 
 # CTF environment
 ## HOST
@@ -29,6 +30,10 @@ https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%
 - Firefox
 set CA and FoxyProxy for BurpSuite
 - VSCode
+    - extensions
+        - vim
+        - zenkaku
+        - Highlight Trailing White Spaces
 
 #### WSL
 ##### when you fail `apt update`
@@ -345,3 +350,8 @@ cluster.initial_master_nodes: ["DESKTOP-LM712CE"]
 
 http.host: 0.0.0.0
 ```
+
+## How to Write Script
+1. edit .vscode/launch.json
+2. edit setting.json for WSL
+3. debug with VSCode
