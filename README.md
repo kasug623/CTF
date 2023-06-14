@@ -85,6 +85,7 @@ alias ctf='cd /mnt/c/Users/user/CTF/picoCTF2021/Binary_Exploitation/Stonks'
 export PATH=$PATH:/home/user/DidierStevensTool/oledump
 export PATH=$PATH:/home/user/DidierStevensTool/pdf-parser
 export PATH=$PATH:/home/user/DidierStevensTool/pdfid
+export PATH=$PATH:/home/user/DidierStevensTool/zipdump
 export PATH=$PATH:/home/user/DidierStevensTool/js-1.7.0-mod-c/Windows
 export PATH=$PATH:/home/user/RegRipper3.0
 export PATH=$PATH:/home/user/anaconda3/bin
@@ -242,22 +243,62 @@ $ pip2 install distorm3==3.3.4
 ## --- $ rm distorm3_3.4.1.orig.tar.gz
 ## -------------------
 ##
-##
-## ---- oledump ----
+## ------ Didier Stevens Tools -------------
+### ---- oledump ----
 $ cd /home/user/DidierStevensTool/oledump
 $ wget https://didierstevens.com/files/software/oledump_V0_0_71.zip
 $ unzip oledump_V0_0_71.zip
 $ chmod +x oledump.py
 $ pa3
-##
-## - test
-##
+###
+### - test
+###
 $ oledump.py -h
 $
 $ pip install olefile
 $
 $ oledump.py -h
-## ------------------
+### ------------------
+### ---- zipdump ----
+$ mkdir /home/user/DidierStevensTool/zipdump
+$ cd /home/user/DidierStevensTool/zipdump
+$ wget https://didierstevens.com/files/software/zipdump_v0_0_25.zip
+$ unzip ./zipdump_v0_0_25.zip
+$ rm ./zipdump_v0_0_25.zip
+$ chmod +x zipdump.py
+$ pa3
+###
+### - test
+###
+$ zipdump.py -h
+### ------------------
+### ---- base64dump ----
+$ mkdir /home/user/DidierStevensTool/base64dump
+$ cd /home/user/DidierStevensTool/base64dump
+$ wget https://didierstevens.com/files/software/base64dump_V0_0_22.zip
+$ unzip ./base64dump_V0_0_22.zip
+$ rm ./base64dump_V0_0_22.zip
+$ chmod +x base64dump.py
+$ pa3
+###
+### - test
+###
+$ base64dump.py -h
+### ------------------
+### ---- xmldump ----
+$ mkdir /home/user/DidierStevensTool/xmldump
+$ cd /home/user/DidierStevensTool/xmldump
+$ wget http://didierstevens.com/files/software/xmldump_V0_0_7.zip
+$ unzip ./xmldump_V0_0_7.zip
+$ rm ./xmldump_V0_0_7.zip
+$ chmod +x xmldump.py
+$ pa3
+###
+### - test
+###
+$ xmldump.py -h
+### ------------------
+
 ##
 ##
 ## ---- RegRipper ----
