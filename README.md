@@ -249,6 +249,7 @@ $ cd /home/user/DidierStevensTool/oledump
 $ wget https://didierstevens.com/files/software/oledump_V0_0_71.zip
 $ unzip oledump_V0_0_71.zip
 $ chmod +x oledump.py
+$ chmod +x plugin_biff.py
 $ pa3
 ###
 ### - test
