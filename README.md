@@ -383,6 +383,12 @@ $ pip install pwntools
 ## ------vscode-------
 $ code
 ## -------------------
+##
+## ------XLMMacroDeobfuscator, msoffcrypto-tool-------
+$ pa3
+$ pip install XLMMacroDeobfuscator --force
+$ pd
+## ---------------------------------------------------
 ```
 
 ##### elasticsearch for arkime
