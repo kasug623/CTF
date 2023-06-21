@@ -86,7 +86,9 @@ export PATH=$PATH:/home/user/DidierStevensTool/oledump
 export PATH=$PATH:/home/user/DidierStevensTool/pdf-parser
 export PATH=$PATH:/home/user/DidierStevensTool/pdfid
 export PATH=$PATH:/home/user/DidierStevensTool/zipdump
-export PATH=$PATH:/home/user/DidierStevensTool/js-1.7.0-mod-c/Windows
+export PATH=$PATH:/home/user/DidierStevensTool/base64dump
+export PATH=$PATH:/home/user/DidierStevensTool/xmldump
+export PATH=$PATH:/home/user/DidierStevensTool/msoffcrypto-crack
 export PATH=$PATH:/home/user/RegRipper3.0
 export PATH=$PATH:/home/user/anaconda3/bin
 export PATH=$PATH:/home/user/peepdf
@@ -299,7 +301,19 @@ $ pa3
 ###
 $ xmldump.py -h
 ### ------------------
-
+### ---- msoffcrypto-crack -----
+$ mkdir /home/user/DidierStevensTool/msoffcrypto-crack
+$ cd /home/user/DidierStevensTool/msoffcrypto-crack
+$ wget http://didierstevens.com/files/software/msoffcrypto-crack_V0_0_5.zip
+$ unzip ./msoffcrypto-crack_V0_0_5.zip
+$ rm ./msoffcrypto-crack_V0_0_5.zip
+$ chmod +x msoffcrypto-crack.py
+$ pa3
+###
+### - test
+###
+$ msoffcrypto-crack.py -h
+### ------------------
 ##
 ##
 ## ---- RegRipper ----
@@ -390,6 +404,25 @@ $ pa3
 $ pip install XLMMacroDeobfuscator --force
 $ pd
 ## ---------------------------------------------------
+##
+## ------oletools: olevba, etc-------
+### https://github.com/decalage2/oletools/wiki/Install
+$ pa3
+$ pip install -U 'oletools[full]'
+$ olevba -h
+$ pd
+## ----------------------------------
+##
+## ----------------- trid --------------------
+### https://en.kali.tools/?p=1652
+$ wget http://mark0.net/download/trid_linux_64.zip
+$ unzip trid_linux_64.zip
+$ wget http://mark0.net/download/triddefs.zip
+$ unzip triddefs.zip
+$ sudo mv trid triddefs.trd /usr/local/bin/
+$ rm triddefs.zip trid_linux_64.zip readme.txt
+$ sudo chmod +x /usr/local/bin/trid
+## --------------------------------------------
 ```
 
 ##### elasticsearch for arkime
