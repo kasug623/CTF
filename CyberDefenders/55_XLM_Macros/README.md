@@ -20,7 +20,12 @@ https://securitynews.sonicwall.com/xmlpost/improvements-in-malicious-excel-files
 
 
 # #1
+sample1 starts.
+
 ```bash
+$ file ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
+$ trid sample1-fb5ed444ddc37d748639f624397cff2a.bin
+$ exiftool ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ xlmdeobfuscator -f ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ msoffcrypto-tool --test -v ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ xlmdeobfuscator --password VelvetSweatshop -f ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
@@ -42,9 +47,23 @@ $ oledump.py sample1-decrypted -p plugin_biff.py --pluginoptions '-x' | grep htt
 URLhaus
 
 # #5
+sample2 starts.
+olevba, check the result.
+```bash
+$ file ./sample2-b5d469a07709b5ca6fee934b1e5e8e38.bin
+$ trid sample2-b5d469a07709b5ca6fee934b1e5e8e38.bin
+$ exiftool ./sample2-b5d469a07709b5ca6fee934b1e5e8e38.bin
+$ msoffcrypto-tool --test ./sample2-b5d469a07709b5ca6fee934b1e5e8e38.bin
+$ olevba ./sample2-b5d469a07709b5ca6fee934b1e5e8e38.bin
+```
 ```bash
 $ oledump.py sample2-b5d469a07709b5ca6fee934b1e5e8e38.bin -p plugin_biff.py --pluginoptions '-x' | more
 ```
+
+# #6
+olevba, check the result.
+## other solution
+oledump, plugin_biff, check the result
 
 # #7
 olevba, check the result.  
