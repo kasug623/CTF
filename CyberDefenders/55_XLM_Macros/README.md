@@ -1,5 +1,8 @@
 # Learn
-- VelvetSweashop  
+- VelvetSweatshop  
+If you set another password for read-only, input of password is needed when it is opened.
+However, when you set a password as VelvetSweatshop with a level of read-only,   
+everyone can open the file without a password, but the content is encrypted in terms of binary.  
 - the way to use `oledump/plugin_biff.py`  
 - the way to use `xlmdeobfuscator`  
 how to undersatnd logic and background knowledge.  
@@ -17,34 +20,46 @@ how to undersatnd logic and background knowledge.
 - anti0sandobox
 https://securitynews.sonicwall.com/xmlpost/improvements-in-malicious-excel-files-distributing-zloader/
  - malware family "Zloader"
-
+- When you get a file with password
+dictionary attack
+- `trid` command cannot handle "relative path"  
 
 # #1
 sample1 starts.
-
+Then I find the password is VelvetSweatshop.
 ```bash
 $ file ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ trid sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ exiftool ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
-$ xlmdeobfuscator -f ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ msoffcrypto-tool --test -v ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
+$ msoffcrypto-crack.py sample1-fb5ed444ddc37d748639f624397cff2a.bin
+# complementary procedures
+$ xlmdeobfuscator -f ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 $ xlmdeobfuscator --password VelvetSweatshop -f ./sample1-fb5ed444ddc37d748639f624397cff2a.bin
 ```
+https://blogs.vmware.com/security/2020/11/velvetsweatshop-when-default-passwords-can-still-make-a-difference.html
+https://nakedsecurity.sophos.com/2013/04/11/password-excel-velvet-sweatshop/
+https://blog.cybozu.io/entry/2017/03/09/080000
 
 # #2
 ```bash
+$ olevba sample1-fb5ed444ddc37d748639f624397cff2a.bin | grep -i sheet
+# complementary procedures
 $ msoffcrypto-tool sample1-fb5ed444ddc37d748639f624397cff2a.bin sample1-decrypted -p VelvetSweatshop
 $ msoffcrypto-tool --test -v ./sample1-decrypted
 $ oledump.py sample1-decrypted -p plugin_biff.py --pluginoptions '-x' | more
 ```
 
 # #3
+olevba
 ```bash
+$ olevba sample1-fb5ed444ddc37d748639f624397cff2a.bin | grep -i http
+# complementary procedures
 $ oledump.py sample1-decrypted -p plugin_biff.py --pluginoptions '-x' | grep http
 ```
 
 # #4
-URLhaus
+URLhaus or VT with a decrypted file
 
 # #5
 sample2 starts.

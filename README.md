@@ -308,6 +308,9 @@ $ wget http://didierstevens.com/files/software/msoffcrypto-crack_V0_0_5.zip
 $ unzip ./msoffcrypto-crack_V0_0_5.zip
 $ rm ./msoffcrypto-crack_V0_0_5.zip
 $ chmod +x msoffcrypto-crack.py
+$ vim msoffcrypto-crack.py
+:set ff=unix
+:wq
 $ pa3
 ###
 ### - test
