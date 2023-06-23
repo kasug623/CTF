@@ -312,6 +312,7 @@ $ vim msoffcrypto-crack.py
 :set ff=unix
 :wq
 $ pa3
+$ pip install msoffcrypto-tool
 ###
 ### - test
 ###
@@ -406,6 +407,11 @@ $ code
 $ pa3
 $ pip install XLMMacroDeobfuscator --force
 $ pd
+##
+## - test
+##
+$ xlmdeobfuscator -h
+##
 ## ---------------------------------------------------
 ##
 ## ------oletools: olevba, etc-------
