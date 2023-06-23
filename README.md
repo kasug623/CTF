@@ -41,11 +41,17 @@ https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%
 - Firefox
 set CA and FoxyProxy for BurpSuite
 - VSCode
-    - extensions
-        - vim
-        - zenkaku
-        - Highlight Trailing White Spaces
-        - WSL
+  - extensions
+    - vim
+    - zenkaku
+    - Highlight Trailing White Spaces
+    - WSL
+- Tablacus Explorer
+  - Add-on
+    - split
+    - split 3
+    - split 6
+    - Dark Mode
 #### WSL
 ##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
@@ -312,6 +318,7 @@ $ vim msoffcrypto-crack.py
 :set ff=unix
 :wq
 $ pa3
+$ pip install msoffcrypto-tool
 ###
 ### - test
 ###
@@ -406,6 +413,11 @@ $ code
 $ pa3
 $ pip install XLMMacroDeobfuscator --force
 $ pd
+##
+## - test
+##
+$ xlmdeobfuscator -h
+##
 ## ---------------------------------------------------
 ##
 ## ------oletools: olevba, etc-------
