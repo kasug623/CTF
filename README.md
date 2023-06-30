@@ -51,6 +51,7 @@ set CA and FoxyProxy for BurpSuite
     - split 3
     - split 6
     - Dark Mode
+- Exeinfo PE
 #### WSL
 ##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
@@ -383,7 +384,7 @@ $ cd ~/arkime/elasticsearch-8.6.2/
 $ vim ~/arkime/elasticsearch-8.6.2/config/elasticsearch.yml
 ## 
 ##
-$ /opt/arkime/bin/Configure
+$ sudo /opt/arkime/bin/Configure
 $ /opt/arkime/db/db.pl http://localhost:9200 init
 ##
 ## set ID/PW
