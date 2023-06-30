@@ -34,7 +34,7 @@ system sound off due to noisy at click tab many times.
 #### GUI App
 - Process Hacker
 - Wireshark
-- Geo IP Database for Wireshark
+- Geo IP Database for Wireshark  
 https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%20and%20software,information%20for%20an%20IP%20address.
 - うさみみハリケーン
 - BurpSuite
@@ -42,7 +42,6 @@ https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%
 set CA and FoxyProxy for BurpSuite
 - VSCode
   - extensions
-    - vim
     - zenkaku
     - Highlight Trailing White Spaces
     - WSL
@@ -71,6 +70,7 @@ $ wsl
 eval $(dircolors -b ~/.dircolors)
 alias ll='ls -l'
 alias la='ls -la'
+alias grep='grep --color'
 alias win='cd /mnt/c/Users/user'
 alias lin='cd ~/'
 alias ..='cd ..'
@@ -91,6 +91,7 @@ alias ctf='cd /mnt/c/Users/user/CTF/picoCTF2021/Binary_Exploitation/Stonks'
 export PATH=$PATH:/home/user/DidierStevensTool/oledump
 export PATH=$PATH:/home/user/DidierStevensTool/pdf-parser
 export PATH=$PATH:/home/user/DidierStevensTool/pdfid
+export PATH=$PATH:/home/user/DidierStevensTool/js-1.7.0-mod-c/Windows
 export PATH=$PATH:/home/user/DidierStevensTool/zipdump
 export PATH=$PATH:/home/user/DidierStevensTool/base64dump
 export PATH=$PATH:/home/user/DidierStevensTool/xmldump
@@ -141,6 +142,29 @@ systemd=true
 ```
 
 ##### VSCode
+###### `.vscode/launch.json`
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File !!!",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "/home/user/virtual_py3.10/lib/python3.10/site-packages"
+            }
+        }
+    ]
+}
+```
+###### `setting.json` for `WSL`
 ```json
 {
     "vim.insertModeKeyBindings": [
@@ -186,6 +210,9 @@ $ git clone https://github.com/volatilityfoundation/volatility3.git
 $ mkdir -p /home/user/DidierStevensTool/oledump
 $ mkdir -p /home/user/DidierStevensTool/pdf-parser
 $ mkdir -p /home/user/DidierStevensTool/pdfid
+$ mkdir -p /home/user/DidierStevensTool/zipdump
+$ mkdir -p /home/user/DidierStevensTool/base64dump
+$ mkdir -p /home/user/DidierStevensTool/xmldump
 ##
 ## ----- completion for git at zsh ------
 ### https://qiita.com/mikan3rd/items/d41a8ca26523f950ea9d
@@ -328,7 +355,7 @@ $ msoffcrypto-crack.py -h
 ##
 ## ---- RegRipper ----
 $ cd /home/user/RegRipper3.0
-& chmod +x rip.pl
+$ chmod +x rip.pl
 ##
 ## - test
 ##
@@ -350,10 +377,10 @@ $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.6.2-
 $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512
 $ shasum -a 512 -c elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512 
 $ tar -xzf elasticsearch-8.6.2-linux-x86_64.tar.gz
-$ cd ~/arkimeelasticsearch-8.6.2/
+$ cd ~/arkime/elasticsearch-8.6.2/
 ##
 #### disable TLS on elasticsearch.yml
-$ vim ~/arkimeelasticsearch-8.6.2/elasticsearch.yml
+$ vim ~/arkime/elasticsearch-8.6.2/config/elasticsearch.yml
 ## 
 ##
 $ /opt/arkime/bin/Configure
@@ -376,13 +403,16 @@ $ cd nfdump
 $ sudo apt install libtool -y
 $ ./autogen.sh
 $ sudo apt install flex
-$ sudo apt install ibbz2-dev
+$ sudo apt install libbz2-dev
 ### for nfpcapd
 $ sudo apt install libpcap-dev
 $ ./configure --enable-nfpcapd
 $ make
 $ sudo make install
 $ sudo ldconfig
+### test
+$ nfdump -h
+$ nfpcapd -h
 ## -------------------
 ##
 ## ----- gdbgui ------
@@ -394,13 +424,14 @@ $ gdbgui
 ## ----- gdb-peda ------
 $ git clone https://github.com/longld/peda.git ~/peda
 $ echo "source ~/peda/peda.py" >> ~/.gdbinit
+$ gdb
 ## -------------------
 ##
 ## ------pwntools--------
 ### https://docs.pwntools.com/en/stable/install.html
 ### python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential is needed,
 ### but only libssl-dev was not installed.
-$ apt install libssl-dev
+$ sudo apt install libssl-dev
 $ pa3
 $ pip install pwntools
 ## -------------------
