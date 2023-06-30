@@ -355,11 +355,11 @@ $ msoffcrypto-crack.py -h
 ##
 ## ---- RegRipper ----
 $ cd /home/user/RegRipper3.0
-$ chmod +x rip.pl
+$ chmod +x rip.exe
 ##
 ## - test
 ##
-$ perl rip.pl
+$ rip.exe -h
 ## -------------------
 ##
 ## ----- Arkime ------
