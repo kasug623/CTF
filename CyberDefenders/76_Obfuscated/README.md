@@ -32,6 +32,7 @@ vipermonkey用の環境用意してもいいかも、regexの古いバージョ�
 pa2  
 vipermoneky is installed on python2 env.
 # pip install --upgrade pip wheel setuptools requests
-# sudo apt-get install python2-dev
+sudo apt install python2-dev
 pip install "regex<2022.1.18"
 pip install -U https://github.com/decalage2/ViperMonkey/archive/master.zip
+vmonkey -h
