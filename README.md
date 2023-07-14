@@ -62,6 +62,7 @@ set CA and FoxyProxy for BurpSuite
   - Teams
 - CMD Watcher  
 https://www.kahusecurity.com/tools.html  
+- OpenVPN
   
 #### WSL
 ##### when you fail `apt update`
@@ -213,6 +214,7 @@ $ sudo apt install cpanminus # for RegRipper
 $ sudo apt install tshark
 $ sudo apt install whois
 $ sudo apt install ngrep
+$ sudo apt install nmap -y
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
 $ cd ~/
