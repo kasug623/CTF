@@ -32,6 +32,7 @@ bcdedit /set hypervisorlaunchtype off
 system sound off due to noisy at click tab many times.
 
 #### GUI App
+- 7zip
 - Process Hacker
 - Wireshark
 - Geo IP Database for Wireshark  
@@ -51,6 +52,18 @@ set CA and FoxyProxy for BurpSuite
     - split 3
     - split 6
     - Dark Mode
+- Exeinfo PE
+- Office
+  - Word
+  - Excel
+  - PowerPoint
+  - Outlook
+  - OneNote
+  - Teams
+- CMD Watcher  
+https://www.kahusecurity.com/tools.html  
+- OpenVPN
+  
 #### WSL
 ##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
@@ -75,8 +88,9 @@ alias win='cd /mnt/c/Users/user'
 alias lin='cd ~/'
 alias ..='cd ..'
 alias clip='/mnt/c/WINDOWS/system32/clip.exe'
-alias pa2='source /home/user/virtual_py2/bin/activate'
-alias pa3='source /home/user/virtual_py3/bin/activate'
+alias pa2='source /home/user/virtual_py2.7/bin/activate'
+alias pa2v='source /home/user/virtual_py2.7_ViperMonkey/bin/activate'
+alias pa3='source /home/user/virtual_py3.10/bin/activate'
 alias pa3j='source /home/user/virtual_py3.10_jupyterlab/bin/activate'
 alias pd='deactivate'
 alias vol2='sudo ~/virtual_py2/bin/python2.7 ~/volatility/vol.py'
@@ -200,6 +214,7 @@ $ sudo apt install cpanminus # for RegRipper
 $ sudo apt install tshark
 $ sudo apt install whois
 $ sudo apt install ngrep
+$ sudo apt install nmap -y
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
 $ cd ~/
@@ -235,9 +250,13 @@ $ sudo apt install python2-pip-whl
 $ sudo apt install python2-setuptools-whl
 $ cd ~/
 $ mkdir /home/user/virtual_py3.10
+$ mkdir /home/user/virtual_py3.10_jupyterlab
 $ mkdir /home/user/virtual_py2.7
+$ mkdir /home/user/virtual_py2.7_ViperMonkey
 $ virtualenv -p python3.10 virtual_py3.10
+$ virtualenv -p python3.10 virtual_py3.10_jupyterlab
 $ virtualenv -p python2.7 virtual_py2.7
+$ virtualenv -p python2.7 virtual_py2.7_ViperMonkey
 ## -------------------
 ##
 ##
@@ -355,11 +374,11 @@ $ msoffcrypto-crack.py -h
 ##
 ## ---- RegRipper ----
 $ cd /home/user/RegRipper3.0
-$ chmod +x rip.pl
+$ chmod +x rip.exe
 ##
 ## - test
 ##
-$ perl rip.pl
+$ rip.exe -h
 ## -------------------
 ##
 ## ----- Arkime ------
@@ -383,7 +402,7 @@ $ cd ~/arkime/elasticsearch-8.6.2/
 $ vim ~/arkime/elasticsearch-8.6.2/config/elasticsearch.yml
 ## 
 ##
-$ /opt/arkime/bin/Configure
+$ sudo /opt/arkime/bin/Configure
 $ /opt/arkime/db/db.pl http://localhost:9200 init
 ##
 ## set ID/PW
@@ -468,6 +487,33 @@ $ unzip triddefs.zip
 $ sudo mv trid triddefs.trd /usr/local/bin/
 $ rm triddefs.zip trid_linux_64.zip readme.txt
 $ sudo chmod +x /usr/local/bin/trid
+## --------------------------------------------
+##
+##
+## ------------- ViperMoneky --------------------
+$ pd
+$ sudo apt install python2-dev
+$ pa2v
+$ pip install "regex<2022.1.18"
+$ pip install -U https://github.com/decalage2/ViperMonkey/archive/master.zip
+##
+## - test
+##
+$ pa2v
+$ vmonkey -h
+$ pd
+## --------------------------------------------
+##
+##
+## ------------- Jupyter Lab --------------------
+$ pa3j
+$ pip install jupyterlab
+$ pd
+##
+## - test
+##
+$ jupyter lab
+# access web via URL with token
 ## --------------------------------------------
 ```
 
