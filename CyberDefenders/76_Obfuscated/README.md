@@ -1,5 +1,9 @@
 # Lesson
-- another solution of #3 with cmdwatche
+- another solution of #3 with cmdwatcher
+you should try online-sandbox if you encounter an problem on your envinment
+- what is `Key-Scheduling Algorithm`
+- understand the algorithm of `RC4`
+- find an algorithm in a script
 
 # #1
 ```bash
@@ -20,19 +24,51 @@ $ olevba 49b367ac261a722a7c2bbbc328c32545 --deobf
 ```
 
 # #4
-olevba
+`olevba`
 
 # #5
-jscript???
+jscript    
+I don't like this format of answer.
 
-# #6    
+# #6
+I tried my environment with `CMDWatcher`, but the macro did not work well.  
+Then I give up this and following questions except #16 and #17.
+I should have try online-sandbox.  
 
-#　いらないかも
-vipermonkey用の環境用意してもいいかも、regexの古いバージョンに依存するため  
-pa2  
-vipermoneky is installed on python2 env.
-# pip install --upgrade pip wheel setuptools requests
-sudo apt install python2-dev
-pip install "regex<2022.1.18"
-pip install -U https://github.com/decalage2/ViperMonkey/archive/master.zip
-vmonkey -h
+With `HybridAnalysis`, I can see the commands.
+
+# #7, #8, #9, #10. #11
+`HybridAnalysis`
+
+# 12
+`HybridAnalysis`
+Key-Scheduling Algorithm
+
+# 13
+`HybridAnalysis`
+flag: command-line argument
+
+A format of the answer is tough.
+
+# 14
+`HybridAnalysis`
+flag: key
+
+A format of the answer is tough.
+
+# 15
+`HybridAnalysis`
+read scripts and find the algorithm.
+flag: RC4
+
+# 16
+I could answer this with my knowledge.
+flag: Eval
+
+# 17
+I could answer this with my knowledge.
+flag: cscript.exe
+
+# 18
+decode base64 and RC4 with CyberChef.
+flag: UspD
