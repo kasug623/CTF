@@ -63,6 +63,8 @@ set CA and FoxyProxy for BurpSuite
 - CMD Watcher  
 https://www.kahusecurity.com/tools.html  
 - OpenVPN
+- Sysinternals Suite
+https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite
   
 #### WSL
 ##### when you fail `apt update`
