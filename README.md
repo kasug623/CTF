@@ -113,6 +113,7 @@ export PATH=$PATH:/home/user/DidierStevensTool/msoffcrypto-crack
 export PATH=$PATH:/home/user/RegRipper3.0
 export PATH=$PATH:/home/user/anaconda3/bin
 export PATH=$PATH:/home/user/peepdf
+export PATH=$PATH:/home/user/gobuster
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
@@ -215,6 +216,8 @@ $ sudo apt install tshark
 $ sudo apt install whois
 $ sudo apt install ngrep
 $ sudo apt install nmap -y
+$ sudo apt install smbclient -y
+$ sudo apt install dirb -y
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
 $ cd ~/
@@ -515,6 +518,28 @@ $ pd
 $ jupyter lab
 # access web via URL with token
 ## --------------------------------------------
+##
+## ----- nmap script for smb
+### https://nmap.org/nsedoc/scripts/smb-os-discovery.html
+$ cd ~/
+$ mkdir nmap_script_smb
+$ cd nmap_script_smb
+$ wget https://svn.nmap.org/nmap/scripts/smb-os-discovery.nse
+##
+## ------ SecLists ------
+### this is a collection of dirctionary files.
+$ cd ~/
+$ git clone https://github.com/danielmiessler/SecLists.git
+##
+## ------ gobuster -----
+### https://github.com/OJ/gobuster
+$ cd ~/
+$ mkdir gobuster
+$ cd gobuster
+$ wget https://github.com/OJ/gobuster/releases/download/v3.5.0/gobuster_3.5.0_Linux_x86_64.tar.gz
+$ tar -xzf gobuster_3.5.0_Linux_x86_64.tar.gz
+$ rm gobuster_3.5.0_Linux_x86_64.tar.gz
+
 ```
 
 ##### elasticsearch for arkime
