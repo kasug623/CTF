@@ -527,13 +527,15 @@ $ cd ~/
 $ mkdir nmap_script_smb
 $ cd nmap_script_smb
 $ wget https://svn.nmap.org/nmap/scripts/smb-os-discovery.nse
+## --------------------------------
 ##
-## ------ SecLists ------
+## ------------ SecLists ------------
 ### this is a collection of dirctionary files.
 $ cd ~/
 $ git clone https://github.com/danielmiessler/SecLists.git
+## ----------------------------------
 ##
-## ------ gobuster -----
+## ----------- gobuster -----------
 ### https://github.com/OJ/gobuster
 $ cd ~/
 $ mkdir gobuster
@@ -541,16 +543,23 @@ $ cd gobuster
 $ wget https://github.com/OJ/gobuster/releases/download/v3.5.0/gobuster_3.5.0_Linux_x86_64.tar.gz
 $ tar -xzf gobuster_3.5.0_Linux_x86_64.tar.gz
 $ rm gobuster_3.5.0_Linux_x86_64.tar.gz
+## --------------------------------
 ##
-## ------- exploitdb ------
+## ----------- exploitdb -----------
 $ sudo git clone https://gitlab.com/exploit-database/exploitdb.git /opt/exploitdb
 $ sudo ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
+## ---------------------------------
 ##
-## ------- Metasploit -------
+## ---------- Metasploit -----------
+$ cd ~/
+$ mkdir Metasploit
+$ cd Metasploit
 $ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
   chmod 755 msfinstall && \
   ./msfinstall
-
+## ---------------------------------
+##
+## ---------------------------------
 ```
 
 ##### elasticsearch for arkime
