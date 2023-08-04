@@ -63,6 +63,8 @@ set CA and FoxyProxy for BurpSuite
 - CMD Watcher  
 https://www.kahusecurity.com/tools.html  
 - OpenVPN
+- Sysinternals Suite
+https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite
   
 #### WSL
 ##### when you fail `apt update`
@@ -539,6 +541,15 @@ $ cd gobuster
 $ wget https://github.com/OJ/gobuster/releases/download/v3.5.0/gobuster_3.5.0_Linux_x86_64.tar.gz
 $ tar -xzf gobuster_3.5.0_Linux_x86_64.tar.gz
 $ rm gobuster_3.5.0_Linux_x86_64.tar.gz
+##
+## ------- exploitdb ------
+$ sudo git clone https://gitlab.com/exploit-database/exploitdb.git /opt/exploitdb
+$ sudo ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
+##
+## ------- Metasploit -------
+$ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall
 
 ```
 
