@@ -5,7 +5,7 @@
 # white list for directory
 !*/
 
-# white list
+# general white list
 !.gitignore
 !CyberDefenders/*/README.md
 !CyberDefenders/*/image/*
@@ -26,6 +26,9 @@
 !picoGymExclusive/*/*/*
 !picoGymExclusive/*/*/*/*
 !picoGymExclusive/*/*/*/*/*
+
+# indivisual white list
+!CyberDefenders/76_Obfuscated/extracted_sanitized.js
 
 # intended black list
 picoCTF2021/Web_Exploitation/Java_Code_Analysis/bookshelf-pico
