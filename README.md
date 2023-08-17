@@ -62,9 +62,36 @@ set CA and FoxyProxy for BurpSuite
   - Teams
 - CMD Watcher  
 https://www.kahusecurity.com/tools.html  
-- OpenVPN
-- Sysinternals Suite
-https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite
+- OpenVPN  
+- Sysinternals Suite  
+https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite  
+- Hex Workshop
+- VisualStudio  
+- ILSpy  
+https://github.com/icsharpcode/ILSpy/releases
+- x32/64dbg  
+https://x64dbg.com/  
+  - plugins  
+    - OllyDumpEx  
+      https://low-priority.appspot.com/ollydumpex/  
+      put plugin file in plugin folder  
+      - release\x64\plugins\OllyDumpEx_X64Dbg.dp64  
+      - release\x64\plugins\OllyDumpEx_X64Dbg.dp32  
+    - ScyllaHide  
+      https://github.com/x64dbg/ScyllaHide/releases  
+    - xAnalyzer  
+      https://github.com/ThunderCls/xAnalyzer/releases/  
+- Graphviz  
+this is for ProcDOT  
+https://graphviz.org/download/  
+- WinDump  
+this is for ProcDOT  
+http://www.winpcap.org/windump  
+- ProcDOT  
+follow instructions in readme file  
+https://www.procdot.com/downloadprocdotbinaries.htm  
+
+
   
 #### WSL
 ##### when you fail `apt update`
@@ -79,7 +106,7 @@ $ wsl
 ```
 
 ##### ~/.zshrc
-```
+```shell
 # my setting
 # setxkbmap -layout jp
 eval $(dircolors -b ~/.dircolors)
@@ -101,6 +128,7 @@ alias volshell3='sudo ~/virtual_py3/bin/python3 ~/volatility3/volshell.py'
 alias a='uname -a'
 alias elasticsearch='/home/user/arkime/elasticsearch-8.6.2/bin/elasticsearch'
 alias arkimeviewer='cd /opt/arkime/viewer && /opt/arkime/bin/node /opt/arkime/viewer/viewer.js'
+alias whatweb='/home/user/whatweb/WhatWeb-0.5.5/whatweb'
 alias gb='git branch'
 alias gs='git switch'
 alias ctf='cd /mnt/c/Users/user/CTF/picoCTF2021/Binary_Exploitation/Stonks'
@@ -566,6 +594,34 @@ $ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config
 ##
 $ msfconsole
 ## ---------------------------------
+##
+## ---------- whatweb -----------
+### https://github.com/urbanadventurer/WhatWeb/releases
+### https://github.com/urbanadventurer/WhatWeb/wiki/Installation
+$ mkdir whatweb
+$ cd whatweb
+$ wget https://github.com/urbanadventurer/WhatWeb/archive/refs/tags/v0.5.5.zip
+$ unzip v0.5.5.zip
+$ rm v0.5.5..zip
+$ cd WhatWeb-0.5.5
+$ sudo gem install bundler
+$ sudo apt install ruby-dev
+##
+## - test
+##
+$ whatweb -h
+## ---------------------------------
+##
+## ---------- zsteg -----------
+### https://github.com/zed-0xff/zsteg
+### https://wiki.bi0s.in/steganography/zsteg/
+$ sudo gem install zsteg
+##
+## - test
+##
+$ zsteg -h
+## ---------------------------------
+
 ```
 
 ##### elasticsearch for arkime
