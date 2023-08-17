@@ -76,7 +76,7 @@ https://x64dbg.com/
       https://low-priority.appspot.com/ollydumpex/  
       put plugin file in plugin folder  
       - release\x64\plugins\OllyDumpEx_X64Dbg.dp64  
-      - release\x64\plugins\OllyDumpEx_X64Dbg.dp32  
+      - release\x32\plugins\OllyDumpEx_X64Dbg.dp32  
     - ScyllaHide  
       https://github.com/x64dbg/ScyllaHide/releases  
     - xAnalyzer  
@@ -606,6 +606,7 @@ $ rm v0.5.5..zip
 $ cd WhatWeb-0.5.5
 $ sudo gem install bundler
 $ sudo apt install ruby-dev
+$ sudo bundle install
 ##
 ## - test
 ##
