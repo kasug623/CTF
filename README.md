@@ -65,10 +65,14 @@ https://www.kahusecurity.com/tools.html
 - OpenVPN  
 - Sysinternals Suite  
 https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite  
+- Explorer Suite  
+https://ntcore.com/?page_id=388  
 - Hex Workshop
 - VisualStudio  
 - ILSpy  
 https://github.com/icsharpcode/ILSpy/releases
+- dnSpy  
+https://github.com/dnSpy/dnSpy
 - x32/64dbg  
 https://x64dbg.com/  
   - plugins  
@@ -91,8 +95,21 @@ http://www.winpcap.org/windump
 follow instructions in readme file  
 https://www.procdot.com/downloadprocdotbinaries.htm  
 
+#### Reverse Shell with WSL
+ListenPort: 9999  
+ListenAddress(external server can access) : XXX.XXX.XXX.XXX 
+ListenAddress(WSL machine IP) : YYY.YYY.YYY.YYY
+```powershell
+$ netsh interface portproxy show v4tov4
+$ netsh interface portproxy add v4tov4 listenport=9999 listenaddress=XXX.XXX.XXX.XXX connectport=9999 connectaddress=YYY.YYY.YYY.YYY
+$ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 9999
+$ netsh interface portproxy delete v4tov4 listenport=9999 listenaddress=XXX.XXX.XXX.XXX
+$ netsh interface portproxy show v4tov4
+```
+```bash
+$ nc -lvnp 9999
+```
 
-  
 #### WSL
 ##### when you fail `apt update`
 - Becasuse of a time difference between host and guset machine on WSL.  
