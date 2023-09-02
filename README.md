@@ -94,6 +94,14 @@ http://www.winpcap.org/windump
 - ProcDOT  
 follow instructions in readme file  
 https://www.procdot.com/downloadprocdotbinaries.htm  
+- API Monitor  
+http://www.rohitab.com/apimonitor  
+- runsc  
+set PATH  
+https://github.com/edygert/runsc  
+- scdbg  
+set PATH  
+http://sandsprite.com/blogs/index.php?uid=7&pid=152  
 
 #### Reverse Shell with WSL
 ListenPort: 9999  
