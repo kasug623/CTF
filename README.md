@@ -6,14 +6,17 @@
   - [Setup VM](#setup-vm)
     - [Windows OS](#windows-os)
         - [GUI app](#gui-app)
+        - [Reverse Shell with WSL](#reverse-shell-with-wsl)
         - [WSL](#wsl)
             - [.zshrc](#zshrc)
             - [Vim](#vim)
             - [wsl.conf](#etcwslconf)
             - [VSCode](#vscode)
             - [setup](#setup)
-            - [elasticsearch for arkime](#elasticsearch-for-arkime)
-  - [How to Write Script](#)
+              - [pdfobjflow.py](#pdfobjflowpy)
+              - [elasticsearch for arkime](#elasticsearch-for-arkime)
+  - [How to Write Script](#how-to-write-script)
+  - [Give-up Tools](#give-up-tools)
 
 # CTF environment
 ## HOST
@@ -105,7 +108,19 @@ http://sandsprite.com/blogs/index.php?uid=7&pid=152
 - Python
 for Noriben
 - Noriben  
-https://github.com/Rurik/Noriben
+https://github.com/Rurik/Noriben  
+  - copy Procmon64.exe as procmon.exe to Noriben folder  
+  - create bat file for my convenience  
+  - noriben.bat  
+    ```bat
+    :: for output Noriben log to Desktop
+    cd /d %userprofile%\Desktop
+
+    :: run Noriben as Admin
+    powershell -Command "Start-Process -Verb RunAs -FilePat 'C:\Users\user\AppData\Local\Programs\Python\Python311\python.exe' -ArgumentList 'C:\App\Noriben-2.0\Noriben.py'"
+
+    pause
+    ```
 
 
 #### Reverse Shell with WSL
@@ -113,10 +128,13 @@ ListenPort: 9999
 ListenAddress(external server can access) : XXX.XXX.XXX.XXX 
 ListenAddress(WSL machine IP) : YYY.YYY.YYY.YYY
 ```powershell
+$ $ListenPort=9999
+$ $External_IP="XXX.XXX.XXX.XXX"
+$ $WSL_IP="YYY.YYY.YYY.YYY"
 $ netsh interface portproxy show v4tov4
-$ netsh interface portproxy add v4tov4 listenport=9999 listenaddress=XXX.XXX.XXX.XXX connectport=9999 connectaddress=YYY.YYY.YYY.YYY
-$ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 9999
-$ netsh interface portproxy delete v4tov4 listenport=9999 listenaddress=XXX.XXX.XXX.XXX
+$ netsh interface portproxy add v4tov4 listenport=$ListenPort listenaddress=$External_IP connectport=$ListenPort connectaddress=$WSL_IP 
+$ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ListenPort
+$ netsh interface portproxy delete v4tov4 listenport=$ListenPort listenaddress=$External_IP
 $ netsh interface portproxy show v4tov4
 ```
 ```bash
@@ -175,7 +193,6 @@ export PATH=$PATH:/home/user/anaconda3/bin
 export PATH=$PATH:/home/user/peepdf
 export PATH=$PATH:/home/user/pdfobjflow
 export PATH=$PATH:/home/user/gobuster
-eval "$(phpenv init -)"
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
@@ -435,7 +452,16 @@ $ pip install msoffcrypto-tool
 ###
 $ msoffcrypto-crack.py -h
 ### ------------------
-##
+###
+### -------Didier's SpiderMonkey ---------
+$ cd /home/user/DidierStevensTool
+$ wget http://didierstevens.com/files/software/js-1.7.0-mod-c.zip
+$ unzip js-1.7.0-mod-c.zip
+$ rm js-1.7.0-mod-c.zip
+$ chmod +x /home/user/DidierStevensTool/js-1.7.0-mod-c/Linux/*
+$ chmod +x /home/user/DidierStevensTool/js-1.7.0-mod-c/Windows/*
+### --------------------------------------
+## --------------------------------------------------
 ##
 ## ---- RegRipper ----
 $ cd /home/user/RegRipper3.0
@@ -663,6 +689,31 @@ $ cd ~/
 $ git clone https://bitbucket.org/sebastiendamaye/pdfobjflow.git
 $ cd pdfobjflow
 $ chmod +x pdfobjflow.py
+$ pa2
+$ pip install pydot
+$ vim pdfobjflow.py
+##
+## - test
+##
+$ pa2
+$ pdf-parser.py [sample.pdf] | pdfobjflow.py
+## --------------------------
+##
+```
+
+##### pdfobjflow.py
+before
+```py
+graph = pydot.graph_from_dot_file('pdfobjflow.dot')
+graph.write_png('pdfobjflow.png')
+```
+after
+```py
+graph = pydot.graph_from_dot_file('pdfobjflow.dot')
+
+for i in range(len(graph )):
+    filename = 'pdfobjflow_' + str(i) + '.png'
+    graph[i].write_png(filename)
 ```
 
 ##### elasticsearch for arkime
@@ -698,4 +749,4 @@ https://github.com/phpenv/phpenv
 I tried it, but necessary libraries are too much.  
 Finally, "phpenv install 8.2.10" took huge time to compile php source code and I counldn't finish it.  
 - local-version CyberChef  
-For saving my resources, I will use only online version.  
+For saving my resources, I will use only online version. 
