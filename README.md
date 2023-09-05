@@ -101,7 +101,12 @@ set PATH
 https://github.com/edygert/runsc  
 - scdbg  
 set PATH  
-http://sandsprite.com/blogs/index.php?uid=7&pid=152  
+http://sandsprite.com/blogs/index.php?uid=7&pid=152
+- Python
+for Noriben
+- Noriben  
+https://github.com/Rurik/Noriben
+
 
 #### Reverse Shell with WSL
 ListenPort: 9999  
@@ -168,7 +173,9 @@ export PATH=$PATH:/home/user/DidierStevensTool/msoffcrypto-crack
 export PATH=$PATH:/home/user/RegRipper3.0
 export PATH=$PATH:/home/user/anaconda3/bin
 export PATH=$PATH:/home/user/peepdf
+export PATH=$PATH:/home/user/pdfobjflow
 export PATH=$PATH:/home/user/gobuster
+eval "$(phpenv init -)"
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
@@ -623,6 +630,7 @@ $ msfconsole
 ## ---------- whatweb -----------
 ### https://github.com/urbanadventurer/WhatWeb/releases
 ### https://github.com/urbanadventurer/WhatWeb/wiki/Installation
+$ cd ~/
 $ mkdir whatweb
 $ cd whatweb
 $ wget https://github.com/urbanadventurer/WhatWeb/archive/refs/tags/v0.5.5.zip
@@ -647,7 +655,14 @@ $ sudo gem install zsteg
 ##
 $ zsteg -h
 ## ---------------------------------
-
+##
+## ------ pdfobjflow ---------
+### https://github.com/digitalsleuth/pdfobjflow
+### https://bitbucket.org/sebastiendamaye/pdfobjflow/src/master/
+$ cd ~/
+$ git clone https://bitbucket.org/sebastiendamaye/pdfobjflow.git
+$ cd pdfobjflow
+$ chmod +x pdfobjflow.py
 ```
 
 ##### elasticsearch for arkime
@@ -672,3 +687,15 @@ http.host: 0.0.0.0
 1. edit `.vscode/launch.json`
 2. edit `setting.json` for `WSL`
 3. debug with `VSCode`
+
+## Give-up Tools
+- shellcode2exe.py  
+https://github.com/MarioVilas/shellcode_tools  
+I couldn't get a necessary library. It is InlineEgg.  
+Instead of shellcode2exe.py, I will use shellcode2exe.php that is a online site.  
+- phpenv  
+https://github.com/phpenv/phpenv  
+I tried it, but necessary libraries are too much.  
+Finally, "phpenv install 8.2.10" took huge time to compile php source code and I counldn't finish it.  
+- local-version CyberChef  
+For saving my resources, I will use only online version.  
