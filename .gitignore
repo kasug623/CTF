@@ -30,6 +30,7 @@
 !picoGymExclusive/*/*/*
 !picoGymExclusive/*/*/*/*
 !picoGymExclusive/*/*/*/*/*
+!HackTheBox/HackTheBoxAcademy/*/*
 
 # indivisual white list
 !CyberDefenders/76_Obfuscated/extracted_sanitized.js
