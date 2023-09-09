@@ -124,21 +124,38 @@ https://github.com/Rurik/Noriben
 
 
 #### Reverse Shell with WSL
-ListenPort: 8888, 9999  
-ListenAddress(external server can access) : XXX.XXX.XXX.XXX 
-ListenAddress(WSL machine IP) : YYY.YYY.YYY.YYY
+ListenPort: 9999  
+ListenAddress(external server can access) : XXX.XXX.XXX.XXX  
+ListenAddress(WSL machine IP) : YYY.YYY.YYY.YYY  
 ```powershell
 $ $ListenPort=9999
 $ $External_IP="XXX.XXX.XXX.XXX"
 $ $WSL_IP="YYY.YYY.YYY.YYY"
+# check
 $ netsh interface portproxy show v4tov4
+$ Get-NetFirewallRule -DisplayName "WSL2 Port Bridge"
+#
+# set
 $ netsh interface portproxy add v4tov4 listenport=$ListenPort listenaddress=$External_IP connectport=$ListenPort connectaddress=$WSL_IP 
 $ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ListenPort
+#
+# reset
 $ netsh interface portproxy delete v4tov4 listenport=$ListenPort listenaddress=$External_IP
+$ Remove-NetFirewallRule -DisplayName "WSL2 Port Bridge"
+#
+# check
 $ netsh interface portproxy show v4tov4
+$ Get-NetFirewallRule -DisplayName "WSL2 Port Bridge"
 ```
+on wsl
 ```bash
 $ nc -lvnp 9999
+```
+##### for powershell script
+```powershell
+$ Get-ExecutionPolicy -List
+$ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser -Force
+$ Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
 ```
 
 #### WSL
