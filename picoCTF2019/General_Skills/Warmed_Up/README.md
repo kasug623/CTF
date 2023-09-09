@@ -7,5 +7,5 @@
         - use prepared functions like `bin()`, `oct()` and `hex()`
             - For other n numbers, create a function yourself or use `CyberChef`
 
-# Write UP
+# Write Up
 just convert a value.
