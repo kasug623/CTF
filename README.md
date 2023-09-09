@@ -124,7 +124,7 @@ https://github.com/Rurik/Noriben
 
 
 #### Reverse Shell with WSL
-ListenPort: 9999  
+ListenPort: 8888, 9999  
 ListenAddress(external server can access) : XXX.XXX.XXX.XXX 
 ListenAddress(WSL machine IP) : YYY.YYY.YYY.YYY
 ```powershell
