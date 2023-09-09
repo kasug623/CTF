@@ -64,10 +64,12 @@ set CA and FoxyProxy for BurpSuite
   - OneNote
   - Teams
 - CMD Watcher  
-https://www.kahusecurity.com/tools.html  
+  - https://www.kahusecurity.com/tools.html  
 - OpenVPN  
 - Sysinternals Suite  
-https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite  
+  - https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite  
+  - set PATH  
+  - initial access
 - Explorer Suite  
 https://ntcore.com/?page_id=388  
 - Hex Workshop
@@ -103,9 +105,10 @@ http://www.rohitab.com/apimonitor
 set PATH  
 https://github.com/edygert/runsc  
 - scdbg  
-set PATH  
+set PATH   
 http://sandsprite.com/blogs/index.php?uid=7&pid=152
 - Python
+set PATH
 for Noriben
 - Noriben  
 https://github.com/Rurik/Noriben  
