@@ -213,6 +213,7 @@ export PATH=$PATH:/home/user/anaconda3/bin
 export PATH=$PATH:/home/user/peepdf
 export PATH=$PATH:/home/user/pdfobjflow
 export PATH=$PATH:/home/user/gobuster
+export PATH=$PATH:/home/user/pwninit
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
@@ -719,6 +720,19 @@ $ pa2
 $ pdf-parser.py [sample.pdf] | pdfobjflow.py
 ## --------------------------
 ##
+## -------- pwninit --------
+### https://github.com/io12/pwninit
+$ cd ~/
+$ mkdir pwninit
+$ cd pwninit
+$ wget https://github.com/io12/pwninit/releases/download/3.3.0/pwninit
+$ chmod +x pwninit
+$ sudo apt install patchelf
+##
+## - test
+##
+$ pwninit -h
+## --------------------------
 ```
 
 ##### pdfobjflow.py
