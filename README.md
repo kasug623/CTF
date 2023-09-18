@@ -131,7 +131,8 @@ ListenPort: 9999
 ListenAddress(external server can access) : XXX.XXX.XXX.XXX  
 ListenAddress(WSL machine IP) : YYY.YYY.YYY.YYY  
 ```powershell
-$ $ListenPort=9999
+$ $ListenPort_1=9999
+$ $ListenPort_2=9999
 $ $External_IP="XXX.XXX.XXX.XXX"
 $ $WSL_IP="YYY.YYY.YYY.YYY"
 # check
@@ -139,11 +140,13 @@ $ netsh interface portproxy show v4tov4
 $ Get-NetFirewallRule -DisplayName "WSL2 Port Bridge"
 #
 # set
-$ netsh interface portproxy add v4tov4 listenport=$ListenPort listenaddress=$External_IP connectport=$ListenPort connectaddress=$WSL_IP 
-$ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ListenPort
+$ netsh interface portproxy add v4tov4 listenport=$ListenPort_1 listenaddress=$External_IP connectport=$ListenPort_1 connectaddress=$WSL_IP 
+$ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ListenPort_1
+## or
+$ New-NetFirewallRule -DisplayName "WSL2 Port Bridge" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $ListenPort_1,$ListenPort_2
 #
 # reset
-$ netsh interface portproxy delete v4tov4 listenport=$ListenPort listenaddress=$External_IP
+$ netsh interface portproxy delete v4tov4 listenport=$ListenPort_1 listenaddress=$External_IP
 $ Remove-NetFirewallRule -DisplayName "WSL2 Port Bridge"
 #
 # check
@@ -733,6 +736,7 @@ $ sudo apt install patchelf
 ##
 $ pwninit -h
 ## --------------------------
+##
 ```
 
 ##### pdfobjflow.py
@@ -784,3 +788,27 @@ I tried it, but necessary libraries are too much.
 Finally, "phpenv install 8.2.10" took huge time to compile php source code and I counldn't finish it.  
 - local-version CyberChef  
 For saving my resources, I will use only online version. 
+- openVPN on WSL2  
+I tried to install openvpn.   
+However, when I run openvpn, some errors showed up.
+  ```zsh
+  ## ----- openvpn ---------
+  apt install apt-transport-https
+  sudo curl -fsSL https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub | sudo gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/openvpn-repo-pkg-keyring.gpg > /dev/null
+  $ sudo curl -fsSL https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-kinetic.list | sudo tee /etc/apt/sources.list.d/openvpn3.list
+  $ sudo apt update
+  $ sudo apt install openvpn3
+  # - test
+  $ sudo openvpn3 config-import --config ./hogehoge.ovpn
+  config-import: ** ERROR ** Could not connect to the D-Bus daemon for : Could not connect: No such file or directory
+  $ sudo service dbus start
+  $ sudo openvpn3 config-import --config ./hogehoge.ovpn
+  config-import: ** ERROR ** Failed preparing proxy: Error calling StartServiceByName for net.openvpn.v3.configuration: Failed to execute program net.openvpn.v3.configuration: Permission denied
+  ### Give up
+  ```
+
+## Give-up Action
+- Metasploit on OpenVPN  
+I use Metasplit on WSL2, but sometimes getting reverse shell is difficult.  
+Even if I set appropriate ip adress for something like LHOSTS on Metasploit and permit FW and Proxy on Windows Host, sometimes I got error around NW setting.  
+I guess that it depends on an algorithm in the exploit code.
