@@ -200,6 +200,8 @@ alias a='uname -a'
 alias elasticsearch='/home/user/arkime/elasticsearch-8.6.2/bin/elasticsearch'
 alias arkimeviewer='cd /opt/arkime/viewer && /opt/arkime/bin/node /opt/arkime/viewer/viewer.js'
 alias whatweb='/home/user/whatweb/WhatWeb-0.5.5/whatweb'
+alias checksec='/home/user/checksec/slimm609-checksec.sh-7694735/checksec'
+alias floss='/home/user/floss/quantumstrand'
 alias gb='git branch'
 alias gs='git switch'
 alias ctf='cd /mnt/c/Users/user/CTF/picoCTF2021/Binary_Exploitation/Stonks'
@@ -737,6 +739,34 @@ $ sudo apt install patchelf
 $ pwninit -h
 ## --------------------------
 ##
+## -------- checksec ---------
+### https://github.com/slimm609/checksec.sh
+### https://slimm609.github.io/checksec.sh/
+$ cd ~/
+$ mkdir checksec
+$ cd checksec
+$ wget https://github.com/slimm609/checksec.sh/zipball/main
+$ unzip ./main
+$ rm ./main
+##
+## - test
+##
+$ checksec -h
+## ---
+##
+## -------- floss (standalone)---------
+### https://github.com/mandiant/flare-floss
+$ cd ~/
+$ mkdir floss
+$ cd floss
+$ wget https://github.com/mandiant/flare-floss/releases/download/quantumstrand-preview7/quantumstrand-quantumstrand-preview7-linux.zip
+$ unzip ./quantumstrand-quantumstrand-preview7-linux.zip
+$ rm ./quantumstrand-quantumstrand-preview7-linux.zip
+##
+## - test
+##
+$ floss -h
+## ---
 ```
 
 ##### pdfobjflow.py
@@ -786,8 +816,6 @@ Instead of shellcode2exe.py, I will use shellcode2exe.php that is a online site.
 https://github.com/phpenv/phpenv  
 I tried it, but necessary libraries are too much.  
 Finally, "phpenv install 8.2.10" took huge time to compile php source code and I counldn't finish it.  
-- local-version CyberChef  
-For saving my resources, I will use only online version. 
 - openVPN on WSL2  
 I tried to install openvpn.   
 However, when I run openvpn, some errors showed up.
