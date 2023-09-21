@@ -750,9 +750,8 @@ $ unzip ./main
 $ rm ./main
 ##
 ## - test
-##
 $ checksec -h
-## ---
+## ---------------------------
 ##
 ## -------- floss (standalone)---------
 ### https://github.com/mandiant/flare-floss
@@ -766,7 +765,8 @@ $ rm ./quantumstrand-quantumstrand-preview7-linux.zip
 ## - test
 ##
 $ floss -h
-## ---
+## 
+## -----------------------------------
 ```
 
 ##### pdfobjflow.py
