@@ -23,28 +23,26 @@ There are two options.
     path: /proc/self/syscall
     b'0 0x5 0x55d07575e6b0 0x400 0x2 0x0 0x0 0x7ffe8e485d38 0x7f332976907d\n'
     ```
-2. guess and calculate an offset  
-    check the offset with local container.  
-
+2. guess and calculate an offset using a local container.  
     edit server.py like this.  
     - before  
-    ```py
-    :
-    :
-        with open(os.path.realpath(path), "rb") as f:
-            print(f.read(0x100))
-    ```
+        ```py
+        :
+        :
+            with open(os.path.realpath(path), "rb") as f:
+                print(f.read(0x100))
+        ```
     - after  
-    ```py
-    :
-    :
-        with open(os.path.realpath(path), "rb") as f:
-            print(f.read())
-    ```
+        ```py
+        :
+        :
+            with open(os.path.realpath(path), "rb") as f:
+                print(f.read())
+        ```
     build a container on a local machine  
-    ![Offset Calc Image](SECCONCTF2023/misc/readme_2023/offsetCalc.png) 
+    ![Offset Calc Image](offsetCalc.png) 
 
-3. try on a target machine
+3. try that on a target machine
     ```console
     $ nc readme-2023.seccon.games 2023
     path: /proc/self/syscall
