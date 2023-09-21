@@ -30,11 +30,14 @@
 !picoGymExclusive/*/*/*
 !picoGymExclusive/*/*/*/*
 !picoGymExclusive/*/*/*/*/*
-!SECONCTF2023/*/*/README.md
+!SECCONCTF2023/*/*/README.md
 !HackTheBox/HackTheBoxAcademy/*/README.md
 
 # indivisual white list
 !CyberDefenders/76_Obfuscated/extracted_sanitized.js
+!SECCONCTF2023/misc/readme_2023/readme2023/*
+!SECCONCTF2023/reversing/jumpout/jumpout
+!SECCONCTF2023/reversing/Sickle/Sickle/problem.py
 
 # intended black list
 picoCTF2021/Web_Exploitation/Java_Code_Analysis/bookshelf-pico
