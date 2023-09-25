@@ -33,6 +33,7 @@
 !picoGymExclusive/*/*/*/*/*
 !SECCONCTF2023/*/*/README.md
 !HackTheBox/HackTheBoxAcademy/*/README.md
+!TryHackMe/*/README.md
 
 # indivisual white list
 !CyberDefenders/76_Obfuscated/extracted_sanitized.js
