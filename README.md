@@ -192,6 +192,7 @@ alias pa2='source /home/user/virtual_py2.7/bin/activate'
 alias pa2v='source /home/user/virtual_py2.7_ViperMonkey/bin/activate'
 alias pa3='source /home/user/virtual_py3.10/bin/activate'
 alias pa3j='source /home/user/virtual_py3.10_jupyterlab/bin/activate'
+alias pa3a='source /home/user/virtual_py3.10_angr/bin/activate'
 alias pd='deactivate'
 alias vol2='sudo ~/virtual_py2/bin/python2.7 ~/volatility/vol.py'
 alias vol3='sudo ~/virtual_py3/bin/python3.10 ~/volatility3/vol.py'
@@ -359,10 +360,12 @@ $ sudo apt install python2-setuptools-whl
 $ cd ~/
 $ mkdir /home/user/virtual_py3.10
 $ mkdir /home/user/virtual_py3.10_jupyterlab
+$ mkdir /home/user/virtual_py3.10_angr
 $ mkdir /home/user/virtual_py2.7
 $ mkdir /home/user/virtual_py2.7_ViperMonkey
 $ virtualenv -p python3.10 virtual_py3.10
 $ virtualenv -p python3.10 virtual_py3.10_jupyterlab
+$ virtualenv -p python3.10 virtual_py3.10_angr
 $ virtualenv -p python2.7 virtual_py2.7
 $ virtualenv -p python2.7 virtual_py2.7_ViperMonkey
 ## -------------------
@@ -767,6 +770,11 @@ $ rm ./quantumstrand-quantumstrand-preview7-linux.zip
 $ floss -h
 ## 
 ## -----------------------------------
+##
+## -------- angr -------
+### https://docs.angr.io/en/latest/getting-started/installing.html
+$ pa3a
+$ pip install angr
 ```
 
 ##### pdfobjflow.py
