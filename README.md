@@ -124,6 +124,7 @@ https://github.com/Rurik/Noriben
 
     pause
     ```
+- CyberChef (local)
 
 
 #### Reverse Shell with WSL
@@ -324,6 +325,7 @@ $ sudo apt install ngrep
 $ sudo apt install nmap -y
 $ sudo apt install smbclient -y
 $ sudo apt install dirb -y
+$ sudo apt install jq
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
 $ cd ~/
