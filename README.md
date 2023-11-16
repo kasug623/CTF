@@ -49,6 +49,9 @@ set CA and FoxyProxy for BurpSuite
     - zenkaku
     - Highlight Trailing White Spaces
     - WSL
+    - python
+    - vim
+    - jupyter
 - Tablacus Explorer
   - Add-on
     - split
@@ -264,50 +267,66 @@ systemd=true
 ```
 
 ##### VSCode
-###### `.vscode/launch.json`
-```json
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Python: Current File !!!",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "env": {
-                "PYTHONPATH": "/home/user/virtual_py3.10/lib/python3.10/site-packages"
-            }
-        }
-    ]
-}
-```
-###### `setting.json` for `WSL`
-```json
-{
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
+- `setting.json`
+  - User setting
+  ```json
+  {
+      "files.autoSave": "afterDelay",
+      "window.zoomLevel": -1,
+      "vim.insertModeKeyBindings": [
+          {
+              "before": [
+                  "j",
+                  "j"
+              ],
+              "after": [
+                  "<Esc>"
+              ]
+          }
+      ]
+  }
+  ```
+  - WSL setting
+  ```json
+  {
     "python.analysis.extraPaths": [
         "/home/user/virtual_py3.10/lib/python3.10/site-packages"
     ],
     "python.autoComplete.extraPaths": [
         "/home/user/virtual_py3.10/lib/python3.10/site-packages"
     ],
-}
-```
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.showKeywords": false,
+    "[python]": {
+        "editor.wordBasedSuggestions": true
+    },
+    "python.languageServer": "Pylance",
+    "python.analysis.completeFunctionParens": true
+  }
+  ```
+- `.vscode/launch.json`
+  ```json
+  {
+      // Use IntelliSense to learn about possible attributes.
+      // Hover to view descriptions of existing attributes.
+      // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "name": "Python: Current File !!!",
+              "type": "python",
+              "request": "launch",
+              "program": "${file}",
+              "console": "integratedTerminal",
+              "justMyCode": true,
+              "env": {
+                  "PYTHONPATH": "/home/user/virtual_py3.10/lib/python3.10/site-packages"
+              }
+          }
+      ]
+  }
+  ```
+
 
 ##### setup
 ```bash
@@ -778,6 +797,18 @@ $ floss -h
 ### https://docs.angr.io/en/latest/getting-started/installing.html
 $ pa3a
 $ pip install angr
+##
+## ---------------------
+##
+## -------- code cell on VSCode --------------
+$ pa3
+$ pip install ipykernel
+$ pd
+$
+$ pa2
+$ pip install ipykernel
+$ pd
+## -------------------------------------------
 ```
 
 ##### pdfobjflow.py
