@@ -328,6 +328,7 @@ $ sudo apt install dirb -y
 $ sudo apt install jq
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
+$ sudo apt install ffuf -y
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
 $ git clone https://github.com/keydet89/RegRipper3.0.git
