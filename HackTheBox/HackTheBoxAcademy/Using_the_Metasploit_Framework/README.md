@@ -1,11 +1,10 @@
 # Lesson Learn
-- how to use `Metasploit`    
+- how to use `Metasploit`  
+    - In Metasploit, how to use a session with [CTRL] + [Z] or `bg` command.  
 - how to set Reverse Shell for WSL  
-    It doen't work well when you use Metasploit due to network. 
-- In Metasploit, how to use a session with [CTRL] + [Z] or `bg` command.  
+    - It doen't work well when you use Metasploit due to network.
 
-
-# Write Up
+# Memo
 ```
 msf6> search elFinder
 msf6> use 3
