@@ -283,7 +283,8 @@ systemd=true
                   "<Esc>"
               ]
           }
-      ]
+      ],
+      "vim.useSystemClipboard": true
   }
   ```
   - WSL setting
