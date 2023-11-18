@@ -1,5 +1,6 @@
 # Lesson
 - the way to use `ffuf`
+- the way to use `SecList`
 
 # Memo
 ```console
@@ -20,6 +21,19 @@ $ ffuf -w wordlist.txt:FUZZ -u http://example.com:PORT/ -H 'Host: FUZZ.example.c
 #
 # Parameter Fuzzing
 $ ffuf -w wordlist.txt:FUZZ -u http://example.com:PORT/admin/admin.php?FUZZ=key -fs xxx
+#
+# Combination
+$ ffuf -w ./mySubdomain.txt:SUB -w /opt/useful/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://example.com:PORT/FUZZ -H 'Host: SUB.example.com' -recursion -recursion-depth 1 -e .php,.php7,.phps
+$
+$ ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://XXX.example.com:PORT/courses/linux-security.php7 -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs 774,780
+
+```
+SecList
+```
+$ wc -l .../SecLists/Usernames/xato-net-10-million-usernames-dup.txt
+$ wc -l .../SecLists/Discovery/Web-Content/web-extensions.txt
+$ wc -l .../SecLists/Discovery/Web-Content/burp-parameter-names.txt
+$ wc -l .../SecLists/Discovery/DNS/subdomains-top1million-5000.txt
 ```
 
 ## this is shit  

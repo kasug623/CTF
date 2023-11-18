@@ -1,6 +1,6 @@
 # Lesson
 - bash for `ASCII code point conversion` with `xxd` command
-- bash for `CaesarCaesar cipher` with `tr` command
+- bash for `Caesar cipher` with `tr` command
 - `xxd`
   - `-x` option:  
     The -x option stands for "hexdump."  
