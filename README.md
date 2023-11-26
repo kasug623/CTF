@@ -893,3 +893,33 @@ However, when I run openvpn, some errors showed up.
 I use Metasplit on WSL2, but sometimes getting reverse shell is difficult.  
 Even if I set appropriate ip adress for something like LHOSTS on Metasploit and permit FW and Proxy on Windows Host, sometimes I got error around NW setting.  
 I guess that it depends on an algorithm in the exploit code.
+
+- Kali
+  - GUI App
+    - Google Chrome
+    - VSCode
+
+  - setting
+    - enable auto-login
+```zsh
+$ sudo apt update
+$ sudo apt upgrade
+##
+## ----------- enable auto-login -----------
+### check gui
+$ cat /etc/X11/default-display-manager
+/usr/sbin/lightdm
+$
+### change config
+$ sudo /etc/lightdm/lightdm.conf
+...
+[Seat:*]
+autologin-user=user
+...
+$
+### update and check
+$ reboot
+## ------------------------------------------
+##
+$ sudo apt install openvpn
+```
