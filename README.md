@@ -894,13 +894,13 @@ I use Metasplit on WSL2, but sometimes getting reverse shell is difficult.
 Even if I set appropriate ip adress for something like LHOSTS on Metasploit and permit FW and Proxy on Windows Host, sometimes I got error around NW setting.  
 I guess that it depends on an algorithm in the exploit code.
 
-- Kali
-  - GUI App
-    - Google Chrome
-    - VSCode
+- Kali  
+  - GUI App  
+    - Google Chrome  
+    - VSCode  
 
-  - setting
-    - enable auto-login
+  - setting  
+    - enable auto-login  
 ```zsh
 $ sudo apt update
 $ sudo apt upgrade
