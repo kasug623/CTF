@@ -224,6 +224,7 @@ export PATH=$PATH:/home/user/peepdf
 export PATH=$PATH:/home/user/pdfobjflow
 export PATH=$PATH:/home/user/gobuster
 export PATH=$PATH:/home/user/pwninit
+export PATH=$PATH:/home/user/patchelf/bin
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
@@ -810,6 +811,15 @@ $ pa2
 $ pip install ipykernel
 $ pd
 ## -------------------------------------------
+##
+## ------ patchelf ---------
+$ cd ~/
+$ mkdir patchelf
+$ cd patchelf
+$ wget https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0-x86_64.tar.gz
+$ tar -zxvf patchelf-0.18.0-x86_64.tar.gz
+$ rm patchelf-0.18.0-x86_64.tar.gz
+## -------------------------
 ```
 
 ##### pdfobjflow.py
