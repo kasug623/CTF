@@ -1,5 +1,5 @@
 # Lesson
-- `echo -n`command  
+- `echo -n`  
     `-n` option ensures no trailing newline. 
     ```zsh
     $ echo -n "computer hackers" | md5sum
