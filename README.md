@@ -347,6 +347,7 @@ $ sudo apt install nmap -y
 $ sudo apt install smbclient -y
 $ sudo apt install dirb -y
 $ sudo apt install jq
+$ sudo apt install ltrace
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
 $ sudo apt install ffuf -y
