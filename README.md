@@ -821,6 +821,34 @@ $ wget https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.
 $ tar -zxvf patchelf-0.18.0-x86_64.tar.gz
 $ rm patchelf-0.18.0-x86_64.tar.gz
 ## -------------------------
+##
+## ------- pwndbg ---------------------------------------------
+### https://github.com/pwndbg/pwndbg
+$ cd ~/
+$ git clone https://github.com/pwndbg/pwndbg
+$ cd pwndbg
+$ ./setup.sh
+##
+## edit ~/.gdbinit
+##
+$ cat ~/.gdbinit
+#source ~/peda/peda.py
+#source ~/Pwngdb/pwngdb.py
+#source ~/Pwngdb/angelheap/gdbinit.py
+
+#define hook-run
+#python
+#import angelheap
+#angelheap.init_angelheap()
+#end
+#end
+source /home/user/pwndbg/gdbinit.py 
+$
+##
+## test
+$ gdb # not pwbdbg. pwndbg command doubly calls some functions.
+##
+## -------------------------------------------------------------
 ```
 
 ##### pdfobjflow.py
