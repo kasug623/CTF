@@ -128,6 +128,7 @@ https://github.com/Rurik/Noriben
     pause
     ```
 - CyberChef (local)
+- FTK Imager
 
 
 #### Reverse Shell with WSL
