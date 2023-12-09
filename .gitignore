@@ -32,6 +32,7 @@
 !picoGymExclusive/*/*/*/*
 !picoGymExclusive/*/*/*/*/*
 !picoMiniByRedpwn/*/*/README.md
+!picoMiniByRedpwn/*/*/solver.py
 !BeginnerPicoMini2022/General_Skills/*/README.md
 !BeginnerPicoMini2022/General_Skills/*/solver.py
 !SECCONCTF2023/*/*/README.md
