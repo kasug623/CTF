@@ -15,14 +15,6 @@ class Solver {
 
     }
 
-    public String urlEncode(byte[] input) {
-        StringBuffer buf = new StringBuffer();
-        for (int i=0; i<input.length; i++) {
-            buf.append(String.format("%%%2x", input[i]));
-        }
-        return buf.toString();
-    }
-
     public String urlDecode(byte[] input) {
         StringBuffer buf = new StringBuffer();
 
@@ -30,8 +22,6 @@ class Solver {
         {
             String a = String.valueOf((char)input[i+1]) + String.valueOf((char)input[i+2]);
             int decimalValue = Integer.parseInt(a, 16);
-
-            // Convert the decimal value to a character
             char asciiChar = (char) decimalValue;
             buf.append(asciiChar);
         }
