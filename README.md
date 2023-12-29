@@ -352,6 +352,7 @@ $ sudo apt install ltrace
 $ sudo apt install clamav clamav-daemon
 $ sudo freshclam
 $ sudo apt install ffuf -y
+$ sudo apt install default-jdk -y
 $ cd ~/
 $ git clone https://github.com/jesparza/peepdf.git
 $ git clone https://github.com/keydet89/RegRipper3.0.git
