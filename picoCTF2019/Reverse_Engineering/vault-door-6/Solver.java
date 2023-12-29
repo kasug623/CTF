@@ -1,0 +1,32 @@
+import java.net.URLDecoder;
+import java.util.Base64;
+import java.io.UnsupportedEncodingException;
+
+class Solver {
+    public static void main(String args[]) {
+        Solver solver = new Solver();
+        solver.displayFlag();
+    }
+
+    public void displayFlag() {
+
+        byte[] flag = new byte[32];
+
+        byte[] myBytes = {
+            0x3b, 0x65, 0x21, 0xa , 0x38, 0x0 , 0x36, 0x1d,
+            0xa , 0x3d, 0x61, 0x27, 0x11, 0x66, 0x27, 0xa ,
+            0x21, 0x1d, 0x61, 0x3b, 0xa , 0x2d, 0x65, 0x27,
+            0xa , 0x6c, 0x61, 0x6d, 0x37, 0x6d, 0x6d, 0x6d,
+        };
+
+        for (int i=0; i<32; i++) {
+            flag[i] = (byte) (myBytes[i] ^ 0x55);
+        }
+
+        System.out.print("flag is: picoCTF{");
+        for (byte c : flag) {
+            System.out.print((char)c);
+        }
+        System.out.println("}");
+    }
+}
