@@ -1,8 +1,10 @@
 # TOC
 - [CTF environment](#ctf-environment)
   - [HOST](#host)
-    - [VMWare Workstaion](#vmware-workstation)
-    - [cmd](#cmd)
+    - [Windows Pro](#windows-pro)
+      - [VMWare Workstaion](#vmware-workstation)
+      - [cmd](#cmd)
+    - [Ubuntu Desktop](#ubuntu-desktop)
   - [Setup VM](#setup-vm)
     - [Windows OS](#windows-os)
         - [GUI app](#gui-app)
@@ -20,15 +22,51 @@
 
 # CTF environment
 ## HOST
-### VMWare Workstation
+### Windows Pro
+- VMWare Workstation  
 put on Intel VT-x/EPT Virtualization  
 ![ScreenShot_VMWareWorkstation Image](doc/image/ScreenShot_VMWareWorkstation.png) 
 
-### cmd
+- cmd  
 hyper-v off is needed to use WSL on VM.  
+```cmd
+$ bcdedit /set hypervisorlaunchtype off
 ```
-bcdedit /set hypervisorlaunchtype off
-```
+### Ubuntu Desktop  
+- VMWare Workstation  
+  - solution for an install trouble on Linux Host  
+    1. manual compile `vmmon.ko` and `vmnet.ko`  
+        ```zsh
+        $ sudo apt install gcc
+        $ sudo apt install make
+        $
+        $ cd ~/
+        #
+        # choose an apropriate branch that suits your vmware version.  
+        $ git clone --branch workstation-17.5.0 https://github.com/mkubecek/vmware-host-modules.git
+        $
+        $ cd vmware-host-modules/
+        $
+        $ sudo make install
+        ```
+        - ref. https://zenn.dev/isi00141/articles/333de2f545a46b  
+        - ref. https://netlog.jpn.org/r271-635/2023/08/ubuntu_vmwarehost_module.html  
+        - ref. https://github.com/mkubecek/vmware-host-modules/tree/workstation-17.5.0  
+    2. vs. Secure Boot  
+        - ref. https://qiita.com/m-tmatma/items/a1853bb3a1ce04dec74f  
+        - ref. https://kb.vmware.com/s/article/2146460  
+    3. extend swap space  
+        ```zsh
+        # e.g. allocate 24G as swap space
+        $
+        $ sudo swapoff /swapfile
+        $ sudo rm  /swapfile
+        $ sudo fallocate -l 24G /swapfile
+        $ sudo chmod 600 /swapfile
+        $ sudo mkswap /swapfile
+        $ sudo swapon /swapfile
+        ```
+        - ref. https://askubuntu.com/questions/1075505/how-do-i-increase-swapfile-in-ubuntu-18-04
 
 ## Setup VM
 ### Windows OS
