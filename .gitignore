@@ -50,6 +50,8 @@
 !picoCTF2023/Binary_Exploitation/babygame2/02_stack.png
 !picoCTF2023/Binary_Exploitation/babygame2/03_address_calc.png
 !picoCTF2023/Binary_Exploitation/babygame2/04_jump_destination.png
+!picoCTF2023/Binary_Exploitation/tic-tac/toctou.png
+
 
 # intended black list
 picoCTF2021/Web_Exploitation/Java_Code_Analysis/bookshelf-pico
