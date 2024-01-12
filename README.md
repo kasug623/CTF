@@ -38,6 +38,9 @@ $ bcdedit /set hypervisorlaunchtype off
     1. manual compile `vmmon.ko` and `vmnet.ko`  
         ```zsh
         $ sudo apt install gcc
+        ## If you need install a specific version, input this.
+        ## sudo apt install gcc-12
+        $
         $ sudo apt install make
         $
         $ cd ~/
@@ -53,6 +56,33 @@ $ bcdedit /set hypervisorlaunchtype off
         - ref. https://netlog.jpn.org/r271-635/2023/08/ubuntu_vmwarehost_module.html  
         - ref. https://github.com/mkubecek/vmware-host-modules/tree/workstation-17.5.0  
     2. vs. Secure Boot  
+        ```zsh
+        $ openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=VMware/"
+        $
+        $ sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmmon)
+        $
+        $ sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmnet)
+        $
+        $ sudo mokutil --password
+        input password: 
+        input password again: 
+        $
+        $ sudo su
+        # mokutil --import MOK.der
+        input password: 
+        input password again: 
+        $
+        $ reboot
+        ```
+        On UEFI console  
+        ```
+        Press Enter Key: (Enter)
+        Enroll MOK
+        Continue 
+        Yes
+        (input password)
+        Reboot 
+        ```
         - ref. https://qiita.com/m-tmatma/items/a1853bb3a1ce04dec74f  
         - ref. https://kb.vmware.com/s/article/2146460  
     3. extend swap space  
