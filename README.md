@@ -48,8 +48,15 @@ $ bcdedit /set hypervisorlaunchtype off
         # choose an apropriate branch that suits your vmware version.  
         $ git clone --branch workstation-17.5.0 https://github.com/mkubecek/vmware-host-modules.git
         $
-        $ cd vmware-host-modules/
+        $ cd ~/vmware-host-modules/
         $
+        $ cd ~/vmware-host-modules/vmmon-only/
+        $ make
+        $
+        $ cd ~/vmware-host-modules/vmnet-only/
+        $ make
+        $
+        $ cd ~/vmware-host-modules/
         $ sudo make install
         ```
         - ref. https://zenn.dev/isi00141/articles/333de2f545a46b  
@@ -57,6 +64,7 @@ $ bcdedit /set hypervisorlaunchtype off
         - ref. https://github.com/mkubecek/vmware-host-modules/tree/workstation-17.5.0  
     2. vs. Secure Boot  
         ```zsh
+        $ cd ~/
         $ openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=VMware/"
         $
         $ sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmmon)
