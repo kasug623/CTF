@@ -19,6 +19,9 @@
               - [elasticsearch for arkime](#elasticsearch-for-arkime)
   - [How to Write Script](#how-to-write-script)
   - [Give-up Tools](#give-up-tools)
+  - [Give-up Actions](#give-up-actions)
+- [Give-up Questions](#give-up-questions)
+
 
 # CTF environment
 ## HOST
@@ -995,7 +998,7 @@ However, when I run openvpn, some errors showed up.
   ### Give up
   ```
 
-## Give-up Action
+## Give-up Actions
 - Metasploit on OpenVPN  
 I use Metasplit on WSL2, but sometimes getting reverse shell is difficult.  
 Even if I set appropriate ip adress for something like LHOSTS on Metasploit and permit FW and Proxy on Windows Host, sometimes I got error around NW setting.  
@@ -1030,3 +1033,12 @@ $ reboot
 ##
 $ sudo apt install openvpn
 ```
+
+# Give-up Questions
+- picoCTF2021 > Binary_Exploitation > Kit_Engine  
+  <details>
+  <summary>details</summary>
+    I created my own shellcode for executing "/bin/ls", but it doesn't work out.  
+    The binary that includes the shellcode can run in my local environment as I thought.  
+    However, using the provided "d8", the shellcode couldn't work out.
+  </details>  
