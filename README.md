@@ -107,7 +107,12 @@ $ bcdedit /set hypervisorlaunchtype off
         $ sudo mkswap /swapfile
         $ sudo swapon /swapfile
         ```
-        - ref. https://askubuntu.com/questions/1075505/how-do-i-increase-swapfile-in-ubuntu-18-04
+        - ref. https://askubuntu.com/questions/1075505/how-do-i-increase-swapfile-in-ubuntu-18-04  
+  - disable Super Key  
+    To enable Windows Key in VM, disable Super Key that is on Windows Key on Host Machine
+    1. install GNOME Tweaks from Software Center  
+    2. change Super Key that is on Windows Key to another key  
+    - ref. https://neos21.net/blog/2020/03/23-03.html  
 
 ## Setup VM
 ### Windows OS
@@ -964,6 +969,29 @@ cluster.initial_master_nodes: ["DESKTOP-LM712CE"]
 
 http.host: 0.0.0.0
 ```
+
+### Kali Linux
+- install terminal emulater  
+  ```zsh
+  $ sudo apt install terminater
+  ```
+  - set default terminal  
+  - customize font and color  
+  - customize a window size of start-up  
+  - put icon on a left-top of a desktop  
+    add launcher on panel, edit the launcher and attach terminater to it
+  - ref. https://qiita.com/Hashibirokou/items/58cfe84975c3b3af0235  
+- install clipboard tool  
+  ```zsh
+  $ sudo apt install diodon
+  ```
+  - set shortcut key  
+    ```
+    windows-key + s -> /usr/bin/diodon
+    ```
+  - cutomize options ... "use primary selection" : ON  
+  - cutomize options ... "PuTTY style paste" : ON  
+    This enables a right click paste.  
 
 ## How to Write Script
 1. edit `.vscode/launch.json`
