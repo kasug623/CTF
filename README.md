@@ -113,6 +113,7 @@ $ bcdedit /set hypervisorlaunchtype off
     1. install GNOME Tweaks from Software Center  
     2. change Super Key that is on Windows Key to another key  
     - ref. https://neos21.net/blog/2020/03/23-03.html  
+    3. change Super Key + v into another key
 
 ## Setup VM
 ### Windows OS
@@ -987,7 +988,7 @@ http.host: 0.0.0.0
   ```
   - set shortcut key  
     ```
-    windows-key + s -> /usr/bin/diodon
+    windows-key + v -> /usr/bin/diodon
     ```
   - cutomize options ... "use primary selection" : ON  
   - cutomize options ... "PuTTY style paste" : ON  
