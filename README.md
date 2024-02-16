@@ -330,13 +330,13 @@ autoload -Uz compinit && compinit
 ##### vim
 ###### put a custom color sheme
 the way to put depends on the color sheme.
-```
+```zsh
 ~/.vim/colors
 (put here iceberg.vim which is downloaded by Internet)
 ```
 
 ###### ~/.vimrc
-```
+```zsh
 inoremap <silent> jj <ESC>
 set relativenumber
 
@@ -352,6 +352,26 @@ caution: systemd=true conflicts with code(VSCode) on WSL
 [boot]
 systemd=true
 ```
+
+##### UXterm
+- ~/.Xresources  
+  UXterm is used when you use gdb in pwntools. 
+  ```
+  UXTerm*utf8               : 1
+  UXTerm*locale             : true
+  UXTerm*selectToClipboard  : true
+  UXTerm*faceName           : Dejavu Sans Mono:style=book
+  UXTerm*faceNameDoublesize : Takao Pゴシック,TakaoPGothic:style=Regular
+  UXTerm*faceSize           : 15
+  UXTerm*background         : black
+  UXTerm*foreground         : white
+  UXTerm*saveLines          : 2000
+  UXTerm*geometry           : 100x50+100+100
+  ```
+  ```zsh
+  $ xrdb ~/.Xresources
+  ```
+  - ref. https://blog2.logical-dice.com/posts/wp/136/  
 
 ##### VSCode
 - `setting.json`
@@ -955,7 +975,7 @@ for i in range(len(graph )):
 
 ##### elasticsearch for arkime
 ###### elasticsearch.yml
-```json
+```yml
 xpack.security.autoconfiguration.enabled: false
 
 xpack.security.enabled: false
@@ -972,6 +992,10 @@ http.host: 0.0.0.0
 ```
 
 ### Kali Linux
+- GUI App  
+  - Google Chrome  
+  - VSCode  
+
 - install terminal emulater  
   ```zsh
   $ sudo apt install terminater
@@ -993,6 +1017,93 @@ http.host: 0.0.0.0
   - cutomize options ... "use primary selection" : ON  
   - cutomize options ... "PuTTY style paste" : ON  
     This enables a right click paste.  
+
+- ~/.vimrc  
+```zsh
+inoremap <silent> jj <ESC>
+set relativenumber
+```
+
+- ~/.zshrc  
+```zsh
+# my setting
+alias pa3='source /home/user/virtual_py3.11/bin/activate'
+alias pd='deactivate'
+```
+
+- Tools  
+```zsh
+$ sudo apt update
+$ sudo apt upgrade
+##
+## ----------- enable auto-login -----------
+### check gui
+$ cat /etc/X11/default-display-manager
+/usr/sbin/lightdm
+$
+### change config
+$ sudo /etc/lightdm/lightdm.conf
+...
+[Seat:*]
+autologin-user=user
+...
+$
+### update and check
+$ reboot
+## ------------------------------------------
+##
+## ---------------- openvpn -----------------
+##
+$ sudo apt install openvpn
+##
+## ------------------------------------------
+##
+## -------------- python environment --------
+# python is already installed
+# virtualenv -h is worked.
+# virtualenv is already installed
+$ mkdir ~/virtual_py3.11
+$ cd ~/
+$ virtualenv -p python3.11 virtual_py3.11
+## ------------------------------------------
+##
+## ------pwntools--------
+### https://docs.pwntools.com/en/stable/install.html
+### python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential is needed,
+### but only libssl-dev was not installed.
+$ sudo apt install libssl-dev
+$ pa3
+$ pip install pwntools
+## -------------------
+##
+## ------- pwndbg ---------------------------------------------
+### https://github.com/pwndbg/pwndbg
+$ cd ~/
+$ git clone https://github.com/pwndbg/pwndbg
+$ cd pwndbg
+$ ./setup.sh
+##
+## edit ~/.gdbinit
+##
+$ cat ~/.gdbinit
+#source ~/peda/peda.py
+#source ~/Pwngdb/pwngdb.py
+#source ~/Pwngdb/angelheap/gdbinit.py
+
+#define hook-run
+#python
+#import angelheap
+#angelheap.init_angelheap()
+#end
+#end
+source /home/user/pwndbg/gdbinit.py 
+$
+##
+## test
+$ gdb # not pwbdbg. pwndbg command doubly calls some functions.
+##
+## -------------------------------------------------------------
+```
 
 ## How to Write Script
 1. edit `.vscode/launch.json`
@@ -1033,35 +1144,6 @@ I use Metasplit on WSL2, but sometimes getting reverse shell is difficult.
 Even if I set appropriate ip adress for something like LHOSTS on Metasploit and permit FW and Proxy on Windows Host, sometimes I got error around NW setting.  
 I guess that it depends on an algorithm in the exploit code.
 
-- Kali  
-  - GUI App  
-    - Google Chrome  
-    - VSCode  
-
-  - setting  
-    - enable auto-login  
-```zsh
-$ sudo apt update
-$ sudo apt upgrade
-##
-## ----------- enable auto-login -----------
-### check gui
-$ cat /etc/X11/default-display-manager
-/usr/sbin/lightdm
-$
-### change config
-$ sudo /etc/lightdm/lightdm.conf
-...
-[Seat:*]
-autologin-user=user
-...
-$
-### update and check
-$ reboot
-## ------------------------------------------
-##
-$ sudo apt install openvpn
-```
 
 # Give-up Questions
 - picoCTF2021 > Binary_Exploitation > Kit_Engine  
