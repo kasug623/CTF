@@ -999,11 +999,13 @@ http.host: 0.0.0.0
 
 - install terminal emulater  
   ```zsh
-  $ sudo apt install terminater
+  $ sudo apt install terminator
   ```
   - set default terminal  
   - customize font and color  
   - customize a window size of start-up  
+  - cutomize options ... "PuTTY style paste" : ON  
+    This enables a right click paste.  
   - put icon on a left-top of a desktop  
     add launcher on panel, edit the launcher and attach terminater to it
   - ref. https://qiita.com/Hashibirokou/items/58cfe84975c3b3af0235  
@@ -1016,8 +1018,7 @@ http.host: 0.0.0.0
     windows-key + v -> /usr/bin/diodon
     ```
   - cutomize options ... "use primary selection" : ON  
-  - cutomize options ... "PuTTY style paste" : ON  
-    This enables a right click paste.  
+
 
 - ~/.vimrc  
 ```zsh
