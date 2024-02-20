@@ -17,6 +17,7 @@
             - [setup](#setup)
               - [pdfobjflow.py](#pdfobjflowpy)
               - [elasticsearch for arkime](#elasticsearch-for-arkime)
+    - [Kali Linux](#kali-linux)
   - [How to Write Script](#how-to-write-script)
   - [Give-up Tools](#give-up-tools)
   - [Give-up Actions](#give-up-actions)
