@@ -1044,7 +1044,7 @@ $ cat /etc/X11/default-display-manager
 /usr/sbin/lightdm
 $
 ### change config
-$ sudo /etc/lightdm/lightdm.conf
+$ sudo vim /etc/lightdm/lightdm.conf
 ...
 [Seat:*]
 autologin-user=user
