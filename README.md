@@ -315,6 +315,7 @@ export PATH=$PATH:/home/user/patchelf/bin
 precmd_functions=""
 export PS1='%F{042}┌  ─  ─  (%f%F{014}%n@%M%f%F{042})─  [%f%F{222}%d%f%F{042}]%f
 %F{042}└  ─ %f %F{014}$%f '
+xrdb ~/.Xresources
 ##
 ## improve zsh
 ### load git-prompt
