@@ -38,7 +38,7 @@ https://web.archive.org/web/20190522030819/https://codewithrockstar.com/code
     the result of removing
     ![result.png](result.png)
 
-4. run in online site provided this ctf  
+4. run it on the online site provided by this ctf  
 https://web.archive.org/web/20190522020843/https://codewithrockstar.com/online  
     ```
     Rocknroll is right              
