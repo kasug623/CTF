@@ -1031,6 +1031,7 @@ set relativenumber
 ```zsh
 # my setting
 alias pa3='source /home/user/virtual_py3.11/bin/activate'
+alias pa2='source /home/user/virtual_py2.7/bin/activate'
 alias pd='deactivate'
 ```
 
@@ -1066,8 +1067,18 @@ $ sudo apt install openvpn
 # virtualenv -h is worked.
 # virtualenv is already installed
 $ mkdir ~/virtual_py3.11
+$ mkdir ~/virtual_py2.7
 $ cd ~/
 $ virtualenv -p python3.11 virtual_py3.11
+$ sudo curl -kL https://bootstrap.pypa.io/pip/2.7/get-pip.py | python2
+$ python2.7 -m pip install setuptools
+$ python2.7 -m pip install virtualenv
+# ...
+#   WARNING: The script virtualenv is installed in '/home/user/.local/bin' which is not on PATH.
+#   Consider adding this directory to PATH or, if you prefer to # suppress this warning, use --no-warn-script-location.
+# ...
+$ /home/user/.local/bin/virtualenv -p python2.7 virtual_py2.7
+#
 ## ------------------------------------------
 ##
 ## ------pwntools--------
