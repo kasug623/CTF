@@ -958,6 +958,15 @@ $
 $ gdb # not pwbdbg. pwndbg command doubly calls some functions.
 ##
 ## -------------------------------------------------------------
+##
+## ----- set wordlist for john ----------
+# 1. using "apt install john", hashcat is already installed.
+#   caution: my WSL cannot run hashcat.
+# 2. get wordlist from some web site. e.g. rockyou.txt
+$ sudo mkdir /usr/share/wordlists
+$ sudo mv /mnt/c/Users/user/Downloads/rockyou.txt /usr/share/wordlists/
+##
+## ------------------------
 ```
 
 ##### pdfobjflow.py
@@ -1117,6 +1126,17 @@ $
 $ gdb # not pwbdbg. pwndbg command doubly calls some functions.
 ##
 ## -------------------------------------------------------------
+##
+## ----------------- scapy ------------------
+$ pa3
+$ pip install scapy
+$
+## test
+$ python
+> import scapy
+### no error
+$
+## -----------------------------------------
 ```
 
 ## How to Write Script
