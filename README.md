@@ -164,9 +164,9 @@ https://ntcore.com/?page_id=388
 - Hex Workshop
 - VisualStudio  
 - ILSpy  
-https://github.com/icsharpcode/ILSpy/releases
+https://github.com/icsharpcode/ILSpy/releases  
 - dnSpy  
-https://github.com/dnSpy/dnSpy
+https://github.com/dnSpy/dnSpy  
 - x32/64dbg  
 https://x64dbg.com/  
   - plugins  
@@ -214,9 +214,27 @@ https://github.com/Rurik/Noriben
     pause
     ```
 - CyberChef (local)
-- FTK Imager
-
-
+- FTK Imager  
+- Ghidra  
+  - icon  
+    https://github.com/NationalSecurityAgency/ghidra/blob/master/Ghidra/RuntimeScripts/Windows/support/ghidra.ico  
+  - extensions  
+    - Ghidrathon  
+      https://github.com/mandiant/Ghidrathon
+      ```cmd
+      $ java -vesion
+      $ where java
+      # 1. set $JAVA_HOME
+      $ python -m pip install numpy
+      # 2. install Visual C++ Build Tools
+      # 3. restart
+      $ python -m pip install -r requirements.txt
+      $ python ghidrathon_configure.py <absolute_path_to_ghidra_install_dir>
+      # 4. set Ghidrathon .zip to <absolute_path_to_ghidra_install_dir>\Ghidra\Extensions\
+      # 5. manual configure on UI
+      ## https://github.com/mandiant/Ghidrathon/issues/93
+      ## UI > File > Configure > Ghidra Core > Configure > GhidrathonPlugin ... CHECK -> ON
+      ```
 #### Reverse Shell with WSL
 ListenPort: 9999  
 ListenAddress(external server can access) : XXX.XXX.XXX.XXX  
