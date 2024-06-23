@@ -1024,6 +1024,9 @@ http.host: 0.0.0.0
 - GUI App  
   - Google Chrome  
   - VSCode  
+    - extentions
+      - ANSI Colors
+      - Trailing Spaces
 
 - install terminal emulater  
   ```zsh
@@ -1060,12 +1063,15 @@ set relativenumber
 alias pa3='source /home/user/virtual_py3.11/bin/activate'
 alias pa2='source /home/user/virtual_py2.7/bin/activate'
 alias pd='deactivate'
+alias kerbrute='/home/user/kerbrute_linux_amd64'
 ```
 
 - Tools  
 ```zsh
 $ sudo apt update
 $ sudo apt upgrade
+$ sudo apt install task-japanese task-japanese-desktop
+$ sudo apt install bloodhound neo4j
 ##
 ## ----------- enable auto-login -----------
 ### check gui
@@ -1155,6 +1161,22 @@ $ python
 ### no error
 $
 ## -----------------------------------------
+##
+## ----------- kirbi2john.py ----------
+$ cd ~/
+$ wget https://raw.githubusercontent.com/nidem/kerberoast/907bf234745fe907cf85f3fd916d1c14ab9d65c0/kirbi2john.py
+$ pa2
+$ pip install pyasn1
+### -----------------------------------------
+##
+## ----------- kerbrute ----------
+### https://github.com/ropnop/kerbrute
+$ cd ~/
+$ wget (Github Release URL)
+$ sudo chmod 755 ./kerbrute_linux_amd64
+## test
+$ kerbrute -h
+## -------------------------------
 ```
 
 ## How to Write Script
