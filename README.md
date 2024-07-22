@@ -1064,6 +1064,10 @@ alias pa3='source /home/user/virtual_py3.11/bin/activate'
 alias pa2='source /home/user/virtual_py2.7/bin/activate'
 alias pd='deactivate'
 alias kerbrute='/home/user/kerbrute_linux_amd64'
+
+# Created by `pipx` on 2024-05-07 03:21:28
+export PATH="$PATH:/home/user/.local/bin"
+export PATH="$PATH:/home/user/chisel"
 ```
 
 - Tools  
@@ -1072,6 +1076,7 @@ $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install task-japanese task-japanese-desktop
 $ sudo apt install bloodhound neo4j
+$ sudo apt install enum4linux-ng
 ##
 ## ----------- enable auto-login -----------
 ### check gui
@@ -1177,6 +1182,31 @@ $ sudo chmod 755 ./kerbrute_linux_amd64
 ## test
 $ kerbrute -h
 ## -------------------------------
+##
+## --------- Responder ----------
+$ pa3
+$ pip install netifaces
+$ sudo apt install responder
+$ pd
+## ------------------------------
+##
+## --------- Rubeus ----------
+### https://github.com/GhostPack/Rubeus
+### https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
+$ cd ~/
+$ git clone https://github.com/r3motecontrol/Ghostpack-CompiledBinaries.git
+## ---------------------------
+##
+## --------- Mimikatz ----------
+$ cd ~/
+$ git clone https://github.com/ParrotSec/mimikatz.git
+## -----------------------------
+##
+## --------- chisel ----------
+### https://github.com/jpillora/chisel
+$ cd ~/
+$ mkdir chisel
+
 ```
 
 ## How to Write Script
