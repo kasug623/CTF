@@ -234,6 +234,7 @@ https://github.com/Rurik/Noriben
       # 5. manual configure on UI
       ## https://github.com/mandiant/Ghidrathon/issues/93
       ## UI > File > Configure > Ghidra Core > Configure > GhidrathonPlugin ... CHECK -> ON
+      ```
 - DCode  
 
 #### Reverse Shell with WSL
