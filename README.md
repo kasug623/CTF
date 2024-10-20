@@ -1189,6 +1189,10 @@ However, when I run openvpn, some errors showed up.
   config-import: ** ERROR ** Failed preparing proxy: Error calling StartServiceByName for net.openvpn.v3.configuration: Failed to execute program net.openvpn.v3.configuration: Permission denied
   ### Give up
   ```
+- Event Log Explorer  
+This tool needs a free or purchased liscence. There is also a 30-days trail liscence.  
+Free one has some restricted functions so when I use this tool, I want to use one with a trial liscence.  
+Then I don't install Event Log Exploer permanently.  
 
 ## Give-up Actions
 - Metasploit on OpenVPN  
