@@ -235,6 +235,8 @@ https://github.com/Rurik/Noriben
       ## https://github.com/mandiant/Ghidrathon/issues/93
       ## UI > File > Configure > Ghidra Core > Configure > GhidrathonPlugin ... CHECK -> ON
       ```
+- DCode  
+
 #### Reverse Shell with WSL
 ListenPort: 9999  
 ListenAddress(external server can access) : XXX.XXX.XXX.XXX  
