@@ -122,6 +122,7 @@ system sound off due to noisy at click tab many times.
 
 #### GUI App
 - 7zip
+- Sublime Text
 - Process Hacker
 - Wireshark
 - Geo IP Database for Wireshark  
@@ -236,6 +237,9 @@ https://github.com/Rurik/Noriben
       ## UI > File > Configure > Ghidra Core > Configure > GhidrathonPlugin ... CHECK -> ON
       ```
 - DCode  
+- PE bear  
+  https://github.com/hasherezade/pe-bear  
+- WinDbg  
 
 #### Reverse Shell with WSL
 ListenPort: 9999  
@@ -524,6 +528,12 @@ $ virtualenv -p python2.7 virtual_py2.7
 $ virtualenv -p python2.7 virtual_py2.7_ViperMonkey
 ## -------------------
 ##
+## --- NumPy ---
+$ pa3
+$
+$ pip install numpy
+$
+## ------------- 
 ##
 ## --- volatility3 ---
 $ cd ~/
@@ -987,6 +997,7 @@ $ sudo mkdir /usr/share/wordlists
 $ sudo mv /mnt/c/Users/user/Downloads/rockyou.txt /usr/share/wordlists/
 ##
 ## ------------------------
+##
 ```
 
 ##### pdfobjflow.py
