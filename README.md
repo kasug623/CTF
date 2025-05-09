@@ -997,8 +997,13 @@ $ gdb # not pwbdbg. pwndbg command doubly calls some functions.
 $ sudo mkdir /usr/share/wordlists
 $ sudo mv /mnt/c/Users/user/Downloads/rockyou.txt /usr/share/wordlists/
 ##
-## ------------------------
+## ---------------------------------------
 ##
+## ------- stringsifter --------------------------
+### https://github.com/mandiant/stringsifter
+$ pa3
+$ pip install stringsifter
+## -----------------------------------------------
 ```
 
 ##### pdfobjflow.py
