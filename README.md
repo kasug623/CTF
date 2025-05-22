@@ -156,6 +156,7 @@ set CA and FoxyProxy for BurpSuite
 - CMD Watcher  
   - https://www.kahusecurity.com/tools.html  
 - OpenVPN  
+- PuTTY
 - Sysinternals Suite  
   - https://learn.microsoft.com/ja-jp/sysinternals/downloads/sysinternals-suite  
   - set PATH  
@@ -527,6 +528,9 @@ $ virtualenv -p python3.10 virtual_py3.10_jupyterlab
 $ virtualenv -p python3.10 virtual_py3.10_angr
 $ virtualenv -p python2.7 virtual_py2.7
 $ virtualenv -p python2.7 virtual_py2.7_ViperMonkey
+$ pa3
+$ pip install beautifulsoup4
+$ pd
 ## -------------------
 ##
 ## --- NumPy ---
