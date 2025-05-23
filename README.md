@@ -127,6 +127,8 @@ system sound off due to noisy at click tab many times.
 - Wireshark
 - Geo IP Database for Wireshark  
 https://wiki.wireshark.org/HowToUseGeoIP#:~:text=MaxMind%20produces%20databases%20and%20software,information%20for%20an%20IP%20address.
+- nmap for Windows - https://nmap.org/download  
+  - ncat.exe  
 - うさみみハリケーン
 - BurpSuite
 - Firefox
