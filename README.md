@@ -243,6 +243,11 @@ https://github.com/Rurik/Noriben
 - PE bear  
   https://github.com/hasherezade/pe-bear  
 - WinDbg  
+- DocRecrypt  
+  https://www.microsoft.com/en-us/download/details.aspx?id=36443  
+  ```
+  C:\Program Files (x86)\Microsoft Office\DOCRECRYPT\DOCRECRYPT.EXE
+  ```
 
 #### Reverse Shell with WSL
 ListenPort: 9999  
@@ -532,6 +537,7 @@ $ virtualenv -p python2.7 virtual_py2.7
 $ virtualenv -p python2.7 virtual_py2.7_ViperMonkey
 $ pa3
 $ pip install beautifulsoup4
+$ pip install pycryptodome
 $ pd
 ## -------------------
 ##
