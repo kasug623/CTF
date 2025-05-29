@@ -1,22 +1,27 @@
 # TOC
+- [TOC](#toc)
 - [CTF environment](#ctf-environment)
   - [HOST](#host)
     - [Windows Pro](#windows-pro)
-      - [VMWare Workstaion](#vmware-workstation)
-      - [cmd](#cmd)
     - [Ubuntu Desktop](#ubuntu-desktop)
   - [Setup VM](#setup-vm)
     - [Windows OS](#windows-os)
-        - [GUI app](#gui-app)
-        - [Reverse Shell with WSL](#reverse-shell-with-wsl)
-        - [WSL](#wsl)
-            - [.zshrc](#zshrc)
-            - [Vim](#vim)
-            - [wsl.conf](#etcwslconf)
-            - [VSCode](#vscode)
-            - [setup](#setup)
-              - [pdfobjflow.py](#pdfobjflowpy)
-              - [elasticsearch for arkime](#elasticsearch-for-arkime)
+      - [GUI App](#gui-app)
+      - [Reverse Shell with WSL](#reverse-shell-with-wsl)
+        - [for powershell script](#for-powershell-script)
+      - [WSL](#wsl)
+        - [when you fail `apt update`](#when-you-fail-apt-update)
+        - [~/.zshrc](#zshrc)
+        - [vim](#vim)
+          - [put a custom color sheme](#put-a-custom-color-sheme)
+          - [~/.vimrc](#vimrc)
+        - [/etc/wsl.conf](#etcwslconf)
+        - [UXterm](#uxterm)
+        - [VSCode](#vscode)
+        - [setup](#setup)
+        - [pdfobjflow.py](#pdfobjflowpy)
+        - [elasticsearch for arkime](#elasticsearch-for-arkime)
+          - [elasticsearch.yml](#elasticsearchyml)
     - [Kali Linux](#kali-linux)
   - [How to Write Script](#how-to-write-script)
   - [Give-up Tools](#give-up-tools)
@@ -1080,7 +1085,17 @@ http.host: 0.0.0.0
     windows-key + v -> /usr/bin/diodon
     ```
   - cutomize options ... "use primary selection" : ON  
-
+- set auto completion for git
+  ```zsh
+  $ mkdir -p ~/.zsh/completion/
+  $ cd ~/.zsh/completion/
+  $ curl -O https://raw.github.com/git/git/master/contrib/completion/git-completion.zsh
+  $ mv git-completion.zsh ~/.zsh/completion/_git
+  $ ls -l
+  $ vim ./zshrc
+  $ rm -f ~/.zcompdump; compinit
+  ```
+  - c.f. https://gist.github.com/juno/5546179
 
 - ~/.vimrc  
 ```zsh
@@ -1090,6 +1105,15 @@ set relativenumber
 
 - ~/.zshrc  
 ```zsh
+...
+
+$fpath=(~/.zsh/completion $fpath) # configured before compinit
+
+autoload -U compinit # default
+compinit -u # default
+
+...
+
 # my setting
 alias pa3='source /home/user/virtual_py3.11/bin/activate'
 alias pa2='source /home/user/virtual_py2.7/bin/activate'
