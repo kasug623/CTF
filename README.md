@@ -1134,6 +1134,7 @@ $ sudo apt upgrade
 $ sudo apt install task-japanese task-japanese-desktop
 $ sudo apt install bloodhound neo4j
 $ sudo apt install enum4linux-ng
+## https://pkg.kali.org/pkg/krb5
 $ sudo apt install krb5-user
 ##
 ## ----------- enable auto-login -----------
