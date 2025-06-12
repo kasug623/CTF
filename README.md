@@ -1127,11 +1127,15 @@ export PATH="$PATH:/home/user/chisel"
 
 - Tools  
 ```zsh
+$ sudo apt install krb5-user
+$ wget -q -O - https://archive.kali.org/archive-key.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kali-archive-keyring.gpg
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install task-japanese task-japanese-desktop
 $ sudo apt install bloodhound neo4j
 $ sudo apt install enum4linux-ng
+## https://pkg.kali.org/pkg/krb5
+$ sudo apt install krb5-user
 ##
 ## ----------- enable auto-login -----------
 ### check gui
