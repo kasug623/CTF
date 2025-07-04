@@ -538,7 +538,7 @@ $ mkdir /home/user/virtual_py2.7_ViperMonkey
 $ virtualenv -p python3.10 virtual_py3.10
 $ virtualenv -p python3.10 virtual_py3.10_jupyterlab
 $ virtualenv -p python3.10 virtual_py3.10_angr
-$ virtualenv -p python2.7 virtual_py2.7
+$ virtualeenv -p python2.7 virtual_py2.7
 $ virtualenv -p python2.7 virtual_py2.7_ViperMonkey
 $ pa3
 $ pip install beautifulsoup4
@@ -1063,7 +1063,8 @@ http.host: 0.0.0.0
     - extentions
       - ANSI Colors
       - Trailing Spaces
-
+      - Markdown All in One
+  - Obsidian
 - install terminal emulater  
   ```zsh
   $ sudo apt install terminator
@@ -1091,8 +1092,8 @@ http.host: 0.0.0.0
   $ cd ~/.zsh/completion/
   $ curl -O https://raw.github.com/git/git/master/contrib/completion/git-completion.zsh
   $ mv git-completion.zsh ~/.zsh/completion/_git
-  $ ls -l
-  $ vim ./zshrc
+  $ ls -l ~/.zsh/completion/_git
+  $ vim ~/.zshrc
   $ rm -f ~/.zcompdump; compinit
   ```
   - c.f. https://gist.github.com/juno/5546179
@@ -1127,7 +1128,6 @@ export PATH="$PATH:/home/user/chisel"
 
 - Tools  
 ```zsh
-$ sudo apt install krb5-user
 $ wget -q -O - https://archive.kali.org/archive-key.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kali-archive-keyring.gpg
 $ sudo apt update
 $ sudo apt upgrade
@@ -1153,6 +1153,13 @@ $
 $ reboot
 ## ------------------------------------------
 ##
+## -------------Japanese Input --------------
+$ sudo apt install fcitx5 fcitx5-mozc
+# [-] GUI: Fcitx 5 configuration -> Input method -> add "Keyboard - Japanese" and "Mozc"
+# [-] GUI: Fcitx 5 configuration -> Global Options -> Trigger Input Method: "Zenkaku Hankaku" only. Remove others
+#
+## ------------------------------------------
+##
 ## ---------------- openvpn -----------------
 ##
 $ sudo apt install openvpn
@@ -1163,10 +1170,10 @@ $ sudo apt install openvpn
 # python is already installed
 # virtualenv -h is worked.
 # virtualenv is already installed
-$ mkdir ~/virtual_py3.11
+$ mkdir ~/virtual_py3.13
 $ mkdir ~/virtual_py2.7
 $ cd ~/
-$ virtualenv -p python3.11 virtual_py3.11
+$ virtualenv -p python3.13 virtual_py3.13
 $ sudo curl -kL https://bootstrap.pypa.io/pip/2.7/get-pip.py | python2
 $ python2.7 -m pip install setuptools
 $ python2.7 -m pip install virtualenv
@@ -1185,7 +1192,7 @@ $ /home/user/.local/bin/virtualenv -p python2.7 virtual_py2.7
 $ sudo apt install libssl-dev
 $ pa3
 $ pip install pwntools
-## -------------------
+## ----------------------
 ##
 ## ------- pwndbg ---------------------------------------------
 ### https://github.com/pwndbg/pwndbg
@@ -1207,7 +1214,7 @@ $ cat ~/.gdbinit
 #angelheap.init_angelheap()
 #end
 #end
-source /home/user/pwndbg/gdbinit.py 
+$ source /home/user/pwndbg/gdbinit.py
 $
 ##
 ## test
@@ -1265,7 +1272,18 @@ $ git clone https://github.com/ParrotSec/mimikatz.git
 ### https://github.com/jpillora/chisel
 $ cd ~/
 $ mkdir chisel
-
+$ wget (Github Release URL)
+$ gunzip chisel_1.10.1_(architecture version).gz
+## -----------------------------
+##
+## --------- PowerView ----------
+### https://github.com/PowerShellMafia/PowerSploit/
+$ cd ~/
+$ mkdir chisel
+$ wget (Github Release URL)
+$ gunzip chisel_1.10.1_(architecture version).gz
+## -----------------------------
+##
 ```
 
 ## How to Write Script
