@@ -1136,6 +1136,7 @@ $ sudo apt install bloodhound neo4j
 $ sudo apt install enum4linux-ng
 ## https://pkg.kali.org/pkg/krb5
 $ sudo apt install krb5-user
+$ sudo apt install crackmapexec
 ##
 ## ----------- enable auto-login -----------
 ### check gui
@@ -1279,10 +1280,25 @@ $ gunzip chisel_1.10.1_(architecture version).gz
 ## --------- PowerView ----------
 ### https://github.com/PowerShellMafia/PowerSploit/
 $ cd ~/
-$ mkdir chisel
-$ wget (Github Release URL)
-$ gunzip chisel_1.10.1_(architecture version).gz
+$ git clone https://github.com/PowerShellMafia/PowerSploit.git
 ## -----------------------------
+##
+## --------- SecLists ----------
+### https://github.com/danielmiessler/SecLists
+$ sudo apt -y install seclists
+## -----------------------------
+##
+## --------- WordLists ----------
+### https://www.kali.org/tools/wordlists/
+$ sudo apt install wordlists
+$ ls /usr/share/wordlists/
+$ sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+$ ls /usr/share/wordlists/
+## -----------------------------
+##
+## --------- Inveigh ----------
+### https://github.com/Kevin-Robertson/Inveigh
+## ----------------------------
 ##
 ```
 
