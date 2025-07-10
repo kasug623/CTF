@@ -1137,6 +1137,8 @@ $ sudo apt install enum4linux-ng
 ## https://pkg.kali.org/pkg/krb5
 $ sudo apt install krb5-user
 $ sudo apt install crackmapexec
+## install without virtualenv for use command from this tool on terminal
+$ python3 -m pipx install impacket
 ##
 ## ----------- enable auto-login -----------
 ### check gui
