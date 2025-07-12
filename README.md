@@ -1302,6 +1302,14 @@ $ ls /usr/share/wordlists/
 ### https://github.com/Kevin-Robertson/Inveigh
 ## ----------------------------
 ##
+## ---------- PrintSpoofer ----------
+### https://github.com/itm4n/PrintSpoofer
+$ cd ~/
+$ mkdir ~/PrintSpoofer
+$ cd ~/PrintSpoofer
+$ wget (Github Release URL)
+$ chmod 755 PrintSpoofer*.exe
+## ----------------------------------
 ```
 
 ## How to Write Script
