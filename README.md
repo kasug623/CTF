@@ -1154,6 +1154,12 @@ autologin-user=user
 $
 ### update and check
 $ reboot
+### auto-logoff off
+$ gsettings set org.gnome.desktop.session idle-delay 0
+$ gsettings set org.gnome.desktop.screensaver lock-enabled false
+### language
+$ gsettings set org.gnome.system.locale region 'en_US.UTF-8'
+##
 ## ------------------------------------------
 ##
 ## -------------Japanese Input --------------
@@ -1310,6 +1316,15 @@ $ cd ~/PrintSpoofer
 $ wget (Github Release URL)
 $ chmod 755 PrintSpoofer*.exe
 ## ----------------------------------
+##
+## ---------- mRemoteNG-Decrypt ----------
+### https://github.com/haseebT/mRemoteNG-Decrypt.git
+$ cd ~/
+$ git clone https://github.com/haseebT/mRemoteNG-Decrypt.git
+$ pa3
+$ python -m pip install pycryptodomex
+$ pd
+## ---------------------------------------
 ```
 
 ## How to Write Script
@@ -1363,4 +1378,4 @@ I guess that it depends on an algorithm in the exploit code.
     I created my own shellcode for executing "/bin/ls", but it doesn't work out.  
     The binary that includes the shellcode can run in my local environment as I thought.  
     However, using the provided "d8", the shellcode couldn't work out.
-  </details>  
+  </details>
