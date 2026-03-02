@@ -1325,6 +1325,20 @@ $ pa3
 $ python -m pip install pycryptodomex
 $ pd
 ## ---------------------------------------
+##
+## ------------ LaZagne ------------------
+### https://github.com/AlessandroZ/LaZagne
+$ cd ~/
+$ mkdir ~/LaZagne
+$ wget (Github Release URL)
+## ---------------------------------------
+##
+## -------------- nc.exe --------------
+## https://github.com/int0x33/nc.exe
+$ cd ~/
+$ git clone https://github.com/int0x33/nc.exe.git
+$ mv -f ~/nc.exe ~/nc_exe
+## ------------------------------------
 ```
 
 ## How to Write Script
