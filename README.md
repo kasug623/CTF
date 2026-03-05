@@ -1339,6 +1339,13 @@ $ cd ~/
 $ git clone https://github.com/int0x33/nc.exe.git
 $ mv -f ~/nc.exe ~/nc_exe
 ## ------------------------------------
+##
+## -------------- hashID --------------
+## https://github.com/psypanda/hashID
+$ pa3
+$ pip install hashid
+$ pd
+## ------------------------------------
 ```
 
 ## How to Write Script
