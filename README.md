@@ -1346,6 +1346,26 @@ $ pa3
 $ pip install hashid
 $ pd
 ## ------------------------------------
+##
+## ---------- princeprocessor ----------
+$ cd ~/
+$ wget https://github.com/hashcat/princeprocessor/releases/download/v0.22/princeprocessor-0.22.7z
+$ 7z x princeprocessor-0.22.7z
+$ rm princeprocessor-0.22.7z
+$ cd princeprocessor-0.22
+$ ./pp64.bin -h
+## -------------------------------------
+##
+## -------------- hcxtools--------------
+$ cd ~/
+$ git clone https://github.com/ZerBea/hcxtools.git
+$ cd hcxtools
+$ sudo apt install libcurl4-openssl-dev
+$ sudo make
+$ sudo make install
+$ hcxpcapngtool -h
+$ which hcxpcapngtool 
+## -------------------------------------
 ```
 
 ## How to Write Script
