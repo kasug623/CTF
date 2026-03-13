@@ -1366,6 +1366,28 @@ $ sudo make install
 $ hcxpcapngtool -h
 $ which hcxpcapngtool 
 ## -------------------------------------
+##
+## 
+## --------- pyftpdlib ---------
+$ pa3
+$ pip install pyftpdlib
+$ python -m pyftpdlib --port 21
+$ pd
+## -----------------------------
+##
+## ------------ wsgidav ------------
+$ pa3
+$ pip install wsgidav cheroot
+$ wsgidav -h
+$ pd
+## ---------------------------------
+##
+## ---------- juliourena/plaintext ----------
+### https://github.com/juliourena/plaintext
+$ cd ~/
+$ git clone  https://github.com/juliourena/plaintext.git
+$ mv ~/plaintext ~/juliourena_plaintext
+## ------------------------------------------
 ```
 
 ## How to Write Script
