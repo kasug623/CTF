@@ -1388,6 +1388,12 @@ $ cd ~/
 $ git clone  https://github.com/juliourena/plaintext.git
 $ mv ~/plaintext ~/juliourena_plaintext
 ## ------------------------------------------
+## ----------- uploadserver -----------
+$ pa3
+$ pip install uploadserver
+$ python -m uploadserver 443
+$ pd
+## ------------------------------------
 ```
 
 ## How to Write Script
