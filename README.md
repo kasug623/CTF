@@ -1124,6 +1124,7 @@ alias kerbrute='/home/user/kerbrute_linux_amd64'
 # Created by `pipx` on 2024-05-07 03:21:28
 export PATH="$PATH:/home/user/.local/bin"
 export PATH="$PATH:/home/user/chisel"
+export PATH="$PATH:/home/user/rdp-sec-check"
 ```
 
 - Tools  
@@ -1394,6 +1395,54 @@ $ pip install uploadserver
 $ python -m uploadserver 443
 $ pd
 ## ------------------------------------
+##
+## ------ Oracle Database Attacking Tool ------
+### https://www.kali.org/tools/odat/
+$ sudo apt install odat
+## --------------------------------------------
+##
+## ----------- sqlplus -----------
+$ sudo apt install oracle-instantclient-sqlplus
+$ sqlplus -h
+sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory
+### If the above error appears, do the following:
+### https://stackoverflow.com/questions/27717312/sqlplus-error-while-loading-shared-libraries-libsqlplus-so-cannot-open-shared
+$ sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig
+$ sqlplus -h
+## -------------------------------
+##
+## ------------- rdp-sec-check -------------
+$ cd ~/
+$ git clone https://github.com/CiscoCXSecurity/rdp-sec-check
+$ cd ~/rdp-sec-check
+$ ./rdp-sec-check.pl -h
+### Probably error appears: Can't locate Encoding/BER.pm ...
+$ sudo cpan
+cpan[1]> install Encoding::BER
+$ ./rdp-sec-check.pl -h
+## -----------------------------------------
+##
+## ------------ ssh-audit ------------
+### https://github.com/jtesta/ssh-audit
+$ cd ~/
+$ wget https://github.com/jtesta/ssh-audit/releases/download/v3.3.0/ssh-audit-3.3.0.tar.gz
+$ tar -xzf ssh-audit-3.3.0.tar.gz
+$ rm ssh-audit-3.3.0.tar.gz
+$ pa3
+$ ~/ssh-audit-3.3.0/ssh-audit.py -h
+## -----------------------------------
+##
+## ----------- RustScan -----------
+### https://github.com/bee-san/RustScan
+### https://github.com/bee-san/RustScan/wiki/Installation-Guide
+$ cd ~/
+$ wget https://github.com/bee-san/RustScan/releases/download/2.4.1/rustscan.deb.zip
+$ unzip ./rustscan.deb.zip
+$ dpkg -i ./rustscan_2.4.1-1_amd64.deb 
+$ rm ./rustscan_2.4.1-1_amd64.deb 
+$ rm ./rustscan.tmp0-stripped
+$ rustscan -h
+## --------------------------------
 ```
 
 ## How to Write Script
