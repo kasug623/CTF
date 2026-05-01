@@ -1443,6 +1443,13 @@ $ rm ./rustscan_2.4.1-1_amd64.deb
 $ rm ./rustscan.tmp0-stripped
 $ rustscan -h
 ## --------------------------------
+##
+## ---------------- logrotten ----------------
+### https://github.com/whotwagner/logrotten
+### https://codeberg.org/whotwagner/logrotten
+$ cd ~/
+$ git clone https://github.com/whotwagner/logrotten.git
+## -------------------------------------------
 ```
 
 ## How to Write Script
