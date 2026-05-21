@@ -1138,6 +1138,7 @@ $ sudo apt install enum4linux-ng
 ## https://pkg.kali.org/pkg/krb5
 $ sudo apt install krb5-user
 $ sudo apt install crackmapexec
+$ sudo apt install sshuttle
 ## install without virtualenv for use command from this tool on terminal
 $ python3 -m pipx install impacket
 ##
@@ -1449,6 +1450,12 @@ $ rustscan -h
 ### https://codeberg.org/whotwagner/logrotten
 $ cd ~/
 $ git clone https://github.com/whotwagner/logrotten.git
+## -------------------------------------------
+##
+## ---------------- rpivot ----------------
+### https://github.com/klsecservices/rpivot
+$ cd ~/
+$ git clone https://github.com/klsecservices/rpivot.git
 ## -------------------------------------------
 ```
 
