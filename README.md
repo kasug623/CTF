@@ -1457,6 +1457,21 @@ $ git clone https://github.com/whotwagner/logrotten.git
 $ cd ~/
 $ git clone https://github.com/klsecservices/rpivot.git
 ## -------------------------------------------
+##
+## ------------------ dnscat2 ------------------
+### https://github.com/iagox86/dnscat2
+$ cd ~/
+$ git clone https://github.com/iagox86/dnscat2.git
+$ cd ~/dnscat2/server/
+$ sudo gem install bundler
+$ sudo bundle install
+## ---------------------------------------------
+##
+## ------------ dnscat2-powershell ------------
+### https://github.com/lukebaggett/dnscat2-powershell
+$ cd ~/
+$ git clone https://github.com/lukebaggett/dnscat2-powershell.git
+## ---------------------------------------------
 ```
 
 ## How to Write Script
