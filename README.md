@@ -1472,6 +1472,53 @@ $ sudo bundle install
 $ cd ~/
 $ git clone https://github.com/lukebaggett/dnscat2-powershell.git
 ## ---------------------------------------------
+##
+## ---------------- ptunnel-ng ----------------
+### https://github.com/utoni/ptunnel-ng
+$ cd ~/
+$ git clone https://github.com/utoni/ptunnel-ng
+$ cd ~/ptunnel-ng
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install automake autoconf -y
+$ sudo ./autogen.sh
+## --------------------------------------------
+##
+## --------------------- SocksOverRDP ---------------------
+### https://github.com/nccgroup/SocksOverRDP
+$ cd ~/
+$ mkdir ~/SocksOverRDP
+$ cd ~/SocksOverRDP
+$ wget https://github.com/nccgroup/SocksOverRDP/releases/download/v1.0/SocksOverRDP-x64.zip
+$ unzip SocksOverRDP-x64.zip
+$ rm SocksOverRDP-x64.zip
+## ---------------------------------------------------------
+##
+## ---------------- Proxifier ----------------
+### https://www.proxifier.com/download/#win-tab
+$ cd ~/                                       
+$ mkdir ~/Proxifier
+$ cd ~/Proxifier
+$ wget https://www.proxifier.com/download/ProxifierPE.zip
+$ unzip ProxifierPE.zip
+$ rm ProxifierPE.zip
+## -------------------------------------------
+##
+## ---------------- EyeWitness ----------------
+### https://github.com/RedSiege/EyeWitness
+$ sudo apt install eyewitness
+$ eyewitness -h
+## --------------------------------------------
+##
+## ---------------- Aquatone -----------------
+$ cd ~/
+$ git clone https://github.com/shelld3v/aquatone.git
+$ cd ~/aquatone
+$ sudo apt update
+$ sudo apt install golang-go
+$ ./build.sh
+$ ~/aquatone/aquatone -h
+## --------------------------------------------
 ```
 
 ## How to Write Script
