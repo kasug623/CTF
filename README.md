@@ -1519,6 +1519,24 @@ $ sudo apt install golang-go
 $ ./build.sh
 $ ~/aquatone/aquatone -h
 ## --------------------------------------------
+##
+## --------------- joomscan ---------------
+### https://www.kali.org/tools/joomscan/
+$ sudo apt install joomscan
+$ joomscan -h
+## ----------------------------------------
+##
+## -------------------- joomla-bruteforce --------------------
+### https://github.com/ajnik/joomla-bruteforce/tree/master
+$ cd ~/
+$ git clone https://github.com/ajnik/joomla-bruteforce.git
+## -----------------------------------------------------------
+##
+## -------------------- reverse_shell_splunk --------------------
+### https://github.com/0xjpuff/reverse_shell_splunk
+$ cd ~/
+$ git clone https://github.com/0xjpuff/reverse_shell_splunk.git
+## -----------------------------------------------------------
 ```
 
 ## How to Write Script
