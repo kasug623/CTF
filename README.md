@@ -1125,6 +1125,7 @@ alias kerbrute='/home/user/kerbrute_linux_amd64'
 export PATH="$PATH:/home/user/.local/bin"
 export PATH="$PATH:/home/user/chisel"
 export PATH="$PATH:/home/user/rdp-sec-check"
+export PATH="$PATH:$HOME/go/bin"
 ```
 
 - Tools  
@@ -1537,6 +1538,14 @@ $ git clone https://github.com/ajnik/joomla-bruteforce.git
 $ cd ~/
 $ git clone https://github.com/0xjpuff/reverse_shell_splunk.git
 ## -----------------------------------------------------------
+##
+## -------------- Shortscan --------------
+### https://github.com/bitquark/shortscan
+$ go install github.com/bitquark/shortscan/cmd/shortscan@latest
+### isntalled to /home/<user>/go/bin/
+$ which shortscan
+$ shortscan -h
+## ---------------------------------------
 ```
 
 ## How to Write Script
