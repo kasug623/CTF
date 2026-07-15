@@ -1546,6 +1546,13 @@ $ go install github.com/bitquark/shortscan/cmd/shortscan@latest
 $ which shortscan
 $ shortscan -h
 ## ---------------------------------------
+##
+## ------------- defaultcreds-cheat-sheet -------------
+### https://github.com/ihebski/DefaultCreds-cheat-sheet
+$ pa3
+$ pip3 install defaultcreds-cheat-sheet
+$ creds -h
+## ----------------------------------------------------
 ```
 
 ## How to Write Script
