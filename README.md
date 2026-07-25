@@ -1120,11 +1120,13 @@ alias pa3='source /home/user/virtual_py3.11/bin/activate'
 alias pa2='source /home/user/virtual_py2.7/bin/activate'
 alias pd='deactivate'
 alias kerbrute='/home/user/kerbrute_linux_amd64'
+alias username-anarchy='/home/user/username-anarchy/username-anarchy'
 
 # Created by `pipx` on 2024-05-07 03:21:28
 export PATH="$PATH:/home/user/.local/bin"
 export PATH="$PATH:/home/user/chisel"
 export PATH="$PATH:/home/user/rdp-sec-check"
+export PATH="$PATH:/home/user/ssh-audit-3.3.0"
 export PATH="$PATH:$HOME/go/bin"
 ```
 
@@ -1553,6 +1555,13 @@ $ pa3
 $ pip3 install defaultcreds-cheat-sheet
 $ creds -h
 ## ----------------------------------------------------
+##
+## ------------------ Username Anarchy ------------------
+### https://github.com/urbanadventurer/username-anarchy
+$ cd ~/
+$ git clone https://github.com/urbanadventurer/username-anarchy
+$ username-anarchy -h
+## ------------------------------------------------------
 ```
 
 ## How to Write Script
