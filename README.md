@@ -1562,6 +1562,14 @@ $ cd ~/
 $ git clone https://github.com/urbanadventurer/username-anarchy
 $ username-anarchy -h
 ## ------------------------------------------------------
+## 
+## ------------------ Snaffler ------------------
+### https://github.com/SnaffCon/Snaffler
+$ cd ~/
+$ mkdir Snaffler
+$ cd Snaffler
+$ wget (Github Release URL)
+## ----------------------------------------------
 ```
 
 ## How to Write Script
