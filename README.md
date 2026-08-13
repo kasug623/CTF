@@ -1570,6 +1570,19 @@ $ mkdir Snaffler
 $ cd Snaffler
 $ wget (Github Release URL)
 ## ----------------------------------------------
+##
+## ------------------ linikatz ------------------
+### https://github.com/CiscoCXSecurity/linikatz
+$ cd ~/
+$ git clone https://github.com/CiscoCXSecurity/linikatz.git
+## ----------------------------------------------
+##
+## ------------------ KeyTabExtract ------------------
+### https://github.com/sosdave/KeyTabExtract
+$ cd ~/
+$ git clone https://github.com/sosdave/KeyTabExtract.git
+## ---------------------------------------------------
+
 ```
 
 ## How to Write Script
