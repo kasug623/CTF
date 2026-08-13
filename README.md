@@ -1116,7 +1116,10 @@ compinit -u # default
 ...
 
 # my setting
-alias pa3='source /home/user/virtual_py3.11/bin/activate'
+alias pa3='source /home/user/virtual_py3.13/bin/activate'
+alias printerbug.py='/home/user/krbrelayx/.venv/bin/python /home/user/krbrelayx/printerbug.py'
+alias gettgtpkinit.py='/home/user/PKINITtools/.venv/bin/python /home/user/PKINITtools/gettgtpkinit.py'
+alias pywhisker.py='/home/user/pywhisker/.venv/bin/python /home/user/pywhisker/pywhisker/pywhisker.py'
 alias pa2='source /home/user/virtual_py2.7/bin/activate'
 alias pd='deactivate'
 alias kerbrute='/home/user/kerbrute_linux_amd64'
@@ -1186,8 +1189,10 @@ $ sudo apt install openvpn
 # virtualenv is already installed
 $ mkdir ~/virtual_py3.13
 $ mkdir ~/virtual_py2.7
+$ mkdir ~/virtual_py3.13_PKINITtools
 $ cd ~/
 $ virtualenv -p python3.13 virtual_py3.13
+$ virtualenv -p python3.13 virtual_py3.13_PKINITtools 
 $ sudo curl -kL https://bootstrap.pypa.io/pip/2.7/get-pip.py | python2
 $ python2.7 -m pip install setuptools
 $ python2.7 -m pip install virtualenv
@@ -1582,7 +1587,25 @@ $ git clone https://github.com/CiscoCXSecurity/linikatz.git
 $ cd ~/
 $ git clone https://github.com/sosdave/KeyTabExtract.git
 ## ---------------------------------------------------
-
+##
+## -------------------- Krbrelayx --------------------
+### https://github.com/dirkjanm/krbrelayx
+$ cd ~/
+$ git clone https://github.com/dirkjanm/krbrelayx.git
+$ cd ~/krbrelayx
+$ uv venv --python 3.13
+$ uv pip install git+https://github.com/fortra/impacket.git
+## ---------------------------------------------------
+##
+## ------------------ PKINIT tools ------------------
+### https://github.com/dirkjanm/PKINITtools
+$ cd ~/
+$ git clone https://github.com/dirkjanm/PKINITtools.git
+$ cd ~/PKINITtools
+$ uv venv --python 3.11
+$ uv pip install -r ./requirements.txt
+$ uv pip install git+https://github.com/wbond/oscrypto.git
+## ---------------------------------------------------
 ```
 
 ## How to Write Script
